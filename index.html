@@ -3,538 +3,188 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Duc Nguyen — Build Wealth. Live Better. Work Smarter.</title>
-<meta name="description" content="Daily insights on finance, crypto, health, and productivity. Actionable strategies to build wealth, optimize health, and 10x your output — in 5 minutes a day.">
-<meta name="author" content="Duc Nguyen">
+<title>MOJO Network — Free Tools, Guides & Resources</title>
+<meta name="description" content="A network of free tools, guides, and resources built by MOJO. Developer tools, AI guides, crypto news, finance tips, and more.">
+<meta name="robots" content="index, follow">
+<meta name="google-site-verification" content="REPLACE_WITH_YOUR_GSC_CODE">
 <link rel="canonical" href="https://nguyenminhduc9988.github.io/">
-
-<!-- Open Graph -->
-<meta property="og:title" content="Duc Nguyen — Build Wealth. Live Better. Work Smarter.">
-<meta property="og:description" content="Daily insights on finance, crypto, health, and productivity.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://nguyenminhduc9988.github.io/">
-<meta property="og:image" content="https://nguyenminhduc9988.github.io/og-image.png">
-
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Duc Nguyen — Build Wealth. Live Better. Work Smarter.">
-<meta name="twitter:description" content="Daily insights on finance, crypto, health, and productivity.">
-
-<!-- Favicon -->
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236366f1'/%3E%3Cstop offset='0.5' stop-color='%23a855f7'/%3E%3Cstop offset='1' stop-color='%23ec4899'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='24' fill='%230a0a0f'/%3E%3Ctext x='50' y='72' font-family='Arial' font-size='52' font-weight='bold' text-anchor='middle' fill='url(%23g)'%3ED%3C/text%3E%3C/svg%3E">
-
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "MOJO Network",
+  "url": "https://nguyenminhduc9988.github.io/",
+  "description": "Network of free tools, guides, and resources",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://nguyenminhduc9988.github.io/free-tools-hub/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "MOJO Network Sites",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ToolNest — Free Online Developer Tools",
+      "url": "https://nguyenminhduc9988.github.io/free-tools-hub/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Productivity Hacks — Work Smarter",
+      "url": "https://nguyenminhduc9988.github.io/productivity-hacks/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "AI Tool Hub — Best AI Tools & Guides 2026",
+      "url": "https://nguyenminhduc9988.github.io/ai-tool-hub/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "SideHustleStack — Side Hustles & Passive Income",
+      "url": "https://nguyenminhduc9988.github.io/sidehustlestack/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Crypto Brief — Daily Crypto News & Guides",
+      "url": "https://nguyenminhduc9988.github.io/crypto-brief/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "name": "Finance Daily — Personal Finance & Investing",
+      "url": "https://nguyenminhduc9988.github.io/finance-daily/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "name": "Health Today — Wellness & Fitness",
+      "url": "https://nguyenminhduc9988.github.io/health-today/"
+    }
+  ]
+}
+</script>
 <style>
-:root {
-  --bg-primary: #0a0a0f;
-  --bg-surface: #12121a;
-  --bg-elevated: #1a1a2e;
-  --border-default: #1e1e2e;
-  --border-hover: #2e2e4e;
-  --accent: #6366f1;
-  --accent-light: #818cf8;
-  --accent-glow: rgba(99, 102, 241, 0.3);
-  --positive: #22c55e;
-  --negative: #ef4444;
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
-  --font-display: 'Inter', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: var(--font-display);
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* Aurora background */
-.aurora {
-  position: fixed; inset: 0; z-index: -1; overflow: hidden;
-}
-.aurora::before, .aurora::after {
-  content: ''; position: absolute; width: 600px; height: 600px;
-  border-radius: 50%; filter: blur(100px); opacity: 0.15;
-  animation: float 20s ease-in-out infinite;
-}
-.aurora::before {
-  background: var(--accent);
-  top: -200px; left: -100px;
-}
-.aurora::after {
-  background: #a855f7;
-  bottom: -200px; right: -100px;
-  animation-delay: -10s;
-}
-@keyframes float {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(100px, -50px) scale(1.1); }
-  66% { transform: translate(-50px, 100px) scale(0.9); }
-}
-
-/* Noise overlay */
-.noise {
-  position: fixed; inset: 0; z-index: -1; pointer-events: none;
-  opacity: 0.03;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-/* Skip link */
-.skip-link {
-  position: absolute; top: -100px; left: 0; z-index: 1000;
-  padding: 12px 24px; background: var(--accent); color: white;
-  border-radius: 0 0 8px 0; text-decoration: none; font-weight: 600;
-}
-.skip-link:focus { top: 0; }
-
-/* Nav */
-nav {
-  position: sticky; top: 0; z-index: 100;
-  background: rgba(10, 10, 15, 0.8);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border-bottom: 1px solid var(--border-default);
-}
-.nav-inner {
-  max-width: 1200px; margin: 0 auto; padding: 0 24px;
-  height: 64px; display: flex; align-items: center; justify-content: space-between;
-}
-.logo {
-  display: flex; align-items: center; gap: 10px;
-  text-decoration: none; color: var(--text-primary);
-  font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em;
-}
-.logo-icon {
-  width: 32px; height: 32px; border-radius: 8px;
-  background: linear-gradient(135deg, var(--accent), #a855f7, #ec4899);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1rem; color: white; font-weight: 900;
-}
-.nav-links { display: flex; gap: 32px; align-items: center; }
-.nav-links a {
-  color: var(--text-secondary); text-decoration: none; font-size: 0.875rem;
-  font-weight: 500; transition: color 200ms;
-}
-.nav-links a:hover { color: var(--text-primary); }
-.nav-cta {
-  padding: 8px 20px; border-radius: 8px;
-  background: var(--accent); color: white;
-  text-decoration: none; font-size: 0.875rem; font-weight: 600;
-  transition: all 200ms;
-}
-.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 12px var(--accent-glow); }
-
-/* Hero */
-.hero {
-  max-width: 900px; margin: 0 auto; padding: 120px 24px 80px;
-  text-align: center; position: relative; overflow: hidden;
-}
-.hero-bg-img {
-  position: absolute; inset: 0; width: 100%; height: 100%;
-  object-fit: cover; z-index: -2; opacity: 0.28;
-}
-.hero-overlay {
-  position: absolute; inset: 0; z-index: -1;
-  background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(10,10,15,0.5), rgba(10,10,15,0.92));
-}
-.hero-orb {
-  position: absolute; border-radius: 50%; filter: blur(40px);
-  z-index: -1; pointer-events: none;
-}
-.orb-1 { width: 180px; height: 180px; background: rgba(99,102,241,0.35); top: 10%; left: 5%; animation: float 14s ease-in-out infinite; }
-.orb-2 { width: 140px; height: 140px; background: rgba(168,85,247,0.3); top: 20%; right: 8%; animation: float 18s ease-in-out infinite reverse; }
-.orb-3 { width: 100px; height: 100px; background: rgba(236,72,153,0.25); bottom: 18%; left: 12%; animation: float 12s ease-in-out infinite; }
-.hero-icon-float {
-  position: absolute; z-index: -1; opacity: 0.5;
-  animation: float 16s ease-in-out infinite;
-}
-.hero-badge {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 6px 16px; border-radius: 9999px;
-  background: var(--bg-surface); border: 1px solid var(--border-hover);
-  font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: 32px;
-  animation: fadeInUp 0.6s var(--ease-out) both;
-}
-.hero-badge .dot {
-  width: 8px; height: 8px; border-radius: 50%; background: var(--positive);
-  box-shadow: 0 0 8px var(--positive);
-  animation: pulse 2s infinite;
-}
-.hero h1 {
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  font-weight: 900; letter-spacing: -0.04em;
-  line-height: 1.05; margin-bottom: 24px;
-  animation: fadeInUp 0.6s var(--ease-out) 100ms both;
-}
-.gradient-text {
-  background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
-  -webkit-background-clip: text; background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.hero p {
-  font-size: clamp(1rem, 2vw, 1.375rem);
-  color: var(--text-secondary); line-height: 1.6;
-  max-width: 640px; margin: 0 auto 40px;
-  animation: fadeInUp 0.6s var(--ease-out) 200ms both;
-}
-.hero-cta {
-  display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
-  animation: fadeInUp 0.6s var(--ease-out) 300ms both;
-}
-.btn-primary {
-  padding: 14px 32px; border-radius: 12px;
-  background: var(--accent); color: white;
-  text-decoration: none; font-weight: 700; font-size: 1rem;
-  transition: all 200ms; border: none; cursor: pointer;
-  box-shadow: 0 4px 24px var(--accent-glow);
-}
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 32px var(--accent-glow);
-}
-.btn-secondary {
-  padding: 14px 32px; border-radius: 12px;
-  background: transparent; color: var(--text-primary);
-  text-decoration: none; font-weight: 600; font-size: 1rem;
-  border: 1px solid var(--border-hover); transition: all 200ms;
-}
-.btn-secondary:hover { background: var(--bg-surface); border-color: var(--accent); }
-
-/* Stats */
-.stats {
-  display: flex; gap: 24px; justify-content: center; flex-wrap: wrap;
-  margin-top: 64px;
-  animation: fadeInUp 0.6s var(--ease-out) 400ms both;
-}
-.stat {
-  background: var(--bg-surface); border: 1px solid var(--border-default);
-  border-radius: 16px; padding: 28px 36px; text-align: center;
-  min-width: 160px; transition: all 300ms var(--ease-out);
-}
-.stat:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.4); }
-.stat-emoji { font-size: 1.75rem; display: block; margin-bottom: 8px; }
-.stat-num {
-  font-family: var(--font-mono); font-size: 2.25rem; font-weight: 800;
-  background: linear-gradient(135deg, var(--accent), #a855f7);
-  -webkit-background-clip: text; background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.stat-label {
-  font-size: 0.8125rem; color: var(--text-muted);
-  text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px;
-}
-
-/* Section */
-section { padding: 80px 24px; max-width: 1200px; margin: 0 auto; }
-.section-label {
-  text-align: center; font-size: 0.8125rem; color: var(--accent);
-  text-transform: uppercase; letter-spacing: 0.15em; font-weight: 700;
-  margin-bottom: 16px;
-}
-.section-title {
-  text-align: center; font-size: clamp(1.75rem, 4vw, 2.5rem);
-  font-weight: 800; letter-spacing: -0.03em; margin-bottom: 16px;
-}
-.section-sub {
-  text-align: center; color: var(--text-secondary);
-  font-size: 1.125rem; max-width: 600px; margin: 0 auto 64px;
-}
-
-/* Site Cards */
-.sites-grid {
-  display: grid; grid-template-columns: 1fr; gap: 24px;
-}
-@media (min-width: 768px) { .sites-grid { grid-template-columns: repeat(2, 1fr); } }
-
-.site-card {
-  display: block; text-decoration: none; color: inherit;
-  background: var(--bg-surface); border: 1px solid var(--border-default);
-  border-radius: 20px; padding: 0; position: relative; overflow: hidden;
-  transition: all 400ms var(--ease-out);
-  animation: fadeInUp 0.6s var(--ease-out) both;
-}
-.card-thumb {
-  display: block; width: 100%; height: 200px; object-fit: cover;
-  border-bottom: 1px solid var(--border-default);
-}
-.card-body { padding: 32px 40px 40px; }
-@media (max-width: 480px) { .card-body { padding: 24px; } .card-thumb { height: 160px; } }
-.site-card:nth-child(1) { animation-delay: 0ms; }
-.site-card:nth-child(2) { animation-delay: 80ms; }
-.site-card:nth-child(3) { animation-delay: 160ms; }
-.site-card:nth-child(4) { animation-delay: 240ms; }
-.site-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--site-accent, var(--accent));
-  box-shadow: 0 24px 48px rgba(0,0,0,0.4), 0 0 24px var(--site-glow, var(--accent-glow));
-}
-.site-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-  background: var(--site-gradient, linear-gradient(90deg, var(--accent), #a855f7));
-  opacity: 0; transition: opacity 400ms;
-}
-.site-card:hover::before { opacity: 1; }
-.site-icon {
-  width: 56px; height: 56px; border-radius: 16px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.75rem; margin-bottom: 24px;
-  background: var(--site-bg, rgba(99, 102, 241, 0.1));
-}
-.site-card h3 {
-  font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px;
-}
-.site-card .site-desc {
-  color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.6; margin-bottom: 20px;
-}
-.site-card .site-link {
-  display: inline-flex; align-items: center; gap: 6px;
-  color: var(--site-accent, var(--accent)); font-weight: 600; font-size: 0.875rem;
-}
-.site-card .site-link svg { transition: transform 200ms; }
-.site-card:hover .site-link svg { transform: translateX(4px); }
-
-/* Site themes */
-.site-finance { --site-accent: #6366f1; --site-glow: rgba(99,102,241,0.2); --site-bg: rgba(99,102,241,0.1); --site-gradient: linear-gradient(90deg, #6366f1, #818cf8); }
-.site-crypto { --site-accent: #f59e0b; --site-glow: rgba(245,158,11,0.2); --site-bg: rgba(245,158,11,0.1); --site-gradient: linear-gradient(90deg, #f59e0b, #fbbf24); }
-.site-health { --site-accent: #10b981; --site-glow: rgba(16,185,129,0.2); --site-bg: rgba(16,185,129,0.1); --site-gradient: linear-gradient(90deg, #10b981, #34d399); }
-.site-productivity { --site-accent: #8b5cf6; --site-glow: rgba(139,92,246,0.2); --site-bg: rgba(139,92,246,0.1); --site-gradient: linear-gradient(90deg, #8b5cf6, #a78bfa); }
-
-/* CTA */
-.cta-section {
-  max-width: 900px; margin: 80px auto; padding: 80px 24px;
-  text-align: center; position: relative;
-}
-.cta-box {
-  background: var(--bg-surface); border: 1px solid var(--border-default);
-  border-radius: 24px; padding: 64px 40px; position: relative; overflow: hidden;
-}
-.cta-box::before {
-  content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse at top, var(--accent-glow), transparent 60%);
-  opacity: 0.5;
-}
-.cta-box > * { position: relative; }
-.cta-box h2 {
-  font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 800;
-  letter-spacing: -0.03em; margin-bottom: 16px;
-}
-.cta-box p { color: var(--text-secondary); font-size: 1.125rem; margin-bottom: 32px; }
-.cta-form {
-  display: flex; gap: 12px; max-width: 480px; margin: 0 auto;
-}
-.cta-form input {
-  flex: 1; padding: 14px 20px; border-radius: 12px;
-  background: var(--bg-elevated); border: 1px solid var(--border-default);
-  color: var(--text-primary); font-size: 1rem; font-family: var(--font-display);
-  transition: border-color 200ms;
-}
-.cta-form input:focus { outline: none; border-color: var(--accent); }
-.cta-form input::placeholder { color: var(--text-muted); }
-.cta-form button {
-  padding: 14px 28px; border-radius: 12px; border: none;
-  background: var(--accent); color: white; font-weight: 700; font-size: 1rem;
-  cursor: pointer; transition: all 200ms; font-family: var(--font-display);
-  white-space: nowrap;
-}
-.cta-form button:hover { transform: translateY(-1px); box-shadow: 0 4px 16px var(--accent-glow); }
-.cta-note { font-size: 0.8125rem; color: var(--text-muted); margin-top: 16px; }
-
-/* Footer */
-footer {
-  border-top: 1px solid var(--border-default);
-  padding: 48px 24px; text-align: center;
-}
-.footer-inner { max-width: 1200px; margin: 0 auto; }
-.footer-links {
-  display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;
-  margin-bottom: 24px;
-}
-.footer-links a {
-  color: var(--text-secondary); text-decoration: none; font-size: 0.875rem;
-  transition: color 200ms;
-}
-.footer-links a:hover { color: var(--text-primary); }
-.footer-copy { color: var(--text-muted); font-size: 0.8125rem; }
-
-/* Animations */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes pulse {
-  0%, 100% { box-shadow: 0 0 0 0 var(--accent-glow); }
-  50% { box-shadow: 0 0 0 8px transparent; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * { animation: none !important; transition: none !important; }
-}
+:root{--bg:#0f1115;--card:#171a21;--ink:#e6e8ee;--muted:#9aa3b2;--acc:#4f8cff;--acc2:#22d3a6;--line:#262b36}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+.wrap{max-width:800px;margin:0 auto;padding:20px}
+header{text-align:center;padding:40px 0 30px}
+header h1{font-size:2.2rem;font-weight:800;letter-spacing:-1px}
+header h1 span{color:var(--acc2)}
+header p{color:var(--muted);font-size:1.05rem;margin-top:8px}
+.stats{text-align:center;margin:20px 0;padding:16px;background:var(--card);border-radius:12px;border:1px solid var(--line)}
+.stats .num{font-size:2rem;font-weight:800;color:var(--acc)}
+.stats .label{color:var(--muted);font-size:.85rem}
+.grid{display:grid;gap:14px;margin:24px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;transition:.15s;text-decoration:none;color:var(--ink);display:block}
+.card:hover{border-color:var(--acc);transform:translateY(-2px);color:var(--ink)}
+.card .emoji{font-size:2rem;margin-bottom:8px}
+.card h2{font-size:1.15rem;font-weight:700;margin-bottom:4px}
+.card p{color:var(--muted);font-size:.9rem}
+.card .tag{display:inline-block;background:rgba(79,140,255,.15);color:var(--acc);padding:2px 10px;border-radius:20px;font-size:.78rem;margin-top:8px}
+.tools-preview{margin:30px 0;padding:20px;background:var(--card);border-radius:14px;border:1px solid var(--line)}
+.tools-preview h3{margin-bottom:12px}
+.tools-grid{display:flex;flex-wrap:wrap;gap:8px}
+.tools-grid a{background:rgba(34,211,166,.12);color:var(--acc2);padding:6px 14px;border-radius:20px;font-size:.82rem;text-decoration:none;border:1px solid rgba(34,211,166,.2)}
+.tools-grid a:hover{background:rgba(34,211,166,.25)}
+footer{text-align:center;padding:30px 0;color:var(--muted);font-size:.85rem}
 </style>
 </head>
 <body>
-<a href="#main" class="skip-link">Skip to main content</a>
-<div class="aurora"></div>
-<div class="noise"></div>
+<div class="wrap">
+<header>
+<h1>🔧 <span>MOJO</span> Network</h1>
+<p>Free tools, guides & resources — built with AI, optimized for humans</p>
+</header>
 
-<nav>
-  <div class="nav-inner">
-    <a href="/" class="logo">
-      <div class="logo-icon">D</div>
-      <span>Duc Nguyen</span>
-    </a>
-    <div class="nav-links">
-      <a href="#network">Network</a>
-      <a href="https://nguyenminhduc9988.github.io/finance-daily/">Finance</a>
-      <a href="https://nguyenminhduc9988.github.io/health-today/">Health</a>
-      <a href="#contact">Contact</a>
-      <a href="#subscribe" class="nav-cta">Subscribe</a>
-    </div>
-  </div>
-</nav>
+<div class="stats">
+<span class="num">136+</span> <span class="label">pages</span> &nbsp;·&nbsp;
+<span class="num">67+</span> <span class="label">tools</span> &nbsp;·&nbsp;
+<span class="num">96+</span> <span class="label">articles</span> &nbsp;·&nbsp;
+<span class="num">7</span> <span class="label">sites</span>
+</div>
 
-<main id="main">
-  <!-- Hero -->
-  <header class="hero">
-    <img class="hero-bg-img" src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=1200&h=600&fit=crop" alt="Abstract finance and technology themed background with glowing data visualizations" width="1200" height="600" loading="eager" decoding="async">
-    <div class="hero-overlay"></div>
-    <div class="hero-orb orb-1"></div>
-    <div class="hero-orb orb-2"></div>
-    <div class="hero-orb orb-3"></div>
-    <svg class="hero-icon-float" style="top:15%;right:18%;" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-    <svg class="hero-icon-float" style="bottom:25%;right:25%;animation-delay:-4s;" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="1.5"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-    <svg class="hero-icon-float" style="top:60%;left:8%;animation-delay:-8s;" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-    <div class="hero-badge">
-      <span class="dot"></span>
-      <span>4 publications · Updated daily</span>
-    </div>
-    <h1>
-      <span class="gradient-text">Build Wealth.</span><br>
-      Live Better.<br>
-      Work Smarter.
-    </h1>
-    <p>Actionable daily insights on money, markets, health, and productivity &mdash; delivered in 5 minutes a day. No fluff. Just what works.</p>
-    <div class="hero-cta">
-      <a href="#network" class="btn-primary">Explore the Network &darr;</a>
-      <a href="#subscribe" class="btn-secondary">Get the Newsletter</a>
-    </div>
-    <div class="stats">
-      <div class="stat">
-        <span class="stat-emoji">👥</span>
-        <div class="stat-num">50K+</div>
-        <div class="stat-label">Monthly Readers</div>
-      </div>
-      <div class="stat">
-        <span class="stat-emoji">📰</span>
-        <div class="stat-num">4</div>
-        <div class="stat-label">Publications</div>
-      </div>
-      <div class="stat">
-        <span class="stat-emoji">⚡</span>
-        <div class="stat-num">28+</div>
-        <div class="stat-label">Weekly Articles</div>
-      </div>
-    </div>
-  </header>
+<div class="grid">
+<a class="card" href="https://nguyenminhduc9988.github.io/free-tools-hub/">
+<div class="emoji">🔧</div>
+<h2>ToolNest — Free Online Developer Tools</h2>
+<p>67+ free browser-based tools: JSON formatter, Base64, password generator, QR codes, calculators and more. No signup, 100% private.</p>
+<span class="tag">Developer Tools</span>
+</a>
+<a class="card" href="https://nguyenminhduc9988.github.io/productivity-hacks/">
+<div class="emoji">⚡</div>
+<h2>Productivity Hacks — Work Smarter</h2>
+<p>Pomodoro technique, deep work, AI productivity tools, and time management strategies.</p>
+<span class="tag">Productivity</span>
+</a>
+<a class="card" href="https://nguyenminhduc9988.github.io/ai-tool-hub/">
+<div class="emoji">🤖</div>
+<h2>AI Tool Hub — Best AI Tools & Guides 2026</h2>
+<p>Comprehensive AI tools directory, reviews, and comparison guides.</p>
+<span class="tag">AI Tools</span>
+</a>
+<a class="card" href="https://nguyenminhduc9988.github.io/sidehustlestack/">
+<div class="emoji">🚀</div>
+<h2>SideHustleStack — Side Hustles & Passive Income</h2>
+<p>Curated side hustle ideas, passive income strategies, and money-making guides.</p>
+<span class="tag">Side Hustles</span>
+</a>
+<a class="card" href="https://nguyenminhduc9988.github.io/crypto-brief/">
+<div class="emoji">₿</div>
+<h2>Crypto Brief — Daily Crypto News & Guides</h2>
+<p>Bitcoin, Ethereum, Solana prices, DeFi guides, and crypto market analysis for beginners and pros.</p>
+<span class="tag">Crypto & DeFi</span>
+</a>
+<a class="card" href="https://nguyenminhduc9988.github.io/finance-daily/">
+<div class="emoji">💰</div>
+<h2>Finance Daily — Personal Finance & Investing</h2>
+<p>Investing guides, budgeting tips, side hustle ideas, and personal finance strategies.</p>
+<span class="tag">Finance</span>
+</a>
+<a class="card" href="https://nguyenminhduc9988.github.io/health-today/">
+<div class="emoji">❤️</div>
+<h2>Health Today — Wellness & Fitness</h2>
+<p>Health tips, workout guides, nutrition advice, and mental wellness strategies.</p>
+<span class="tag">Health & Fitness</span>
+</a>
+</div>
 
-  <!-- Network -->
-  <section id="network">
-    <div class="section-label">The Network</div>
-    <h2 class="section-title">Four Daily Briefings. One Mission.</h2>
-    <p class="section-sub">Each publication dives deep into its domain with expert analysis, actionable strategies, and zero noise.</p>
+<div class="tools-preview">
+<h3>Popular Tools</h3>
+<div class="tools-grid">
+<a href="https://nguyenminhduc9988.github.io/free-tools-hub/tools/json-formatter.html">JSON Formatter</a>
+<a href="https://nguyenminhduc9988.github.io/free-tools-hub/tools/base64.html">Base64 Encode</a>
+<a href="https://nguyenminhduc9988.github.io/free-tools-hub/tools/password-generator.html">Password Generator</a>
+<a href="https://nguyenminhduc9988.github.io/free-tools-hub/tools/qr-generator.html">QR Generator</a>
+<a href="https://nguyenminhduc9988.github.io/free-tools-hub/tools/regex-tester.html">Regex Tester</a>
+<a href="https://nguyenminhduc9988.github.io/free-tools-hub/tools/color-converter.html">Color Converter</a>
+<a href="https://nguyenminhduc9988.github.io/free-tools-hub/tools/hash-generator.html">Hash Generator</a>
+<a href="https://nguyenminhduc9988.github.io/free-tools-hub/tools/timestamp-converter.html">Timestamp Converter</a>
+<a href="https://nguyenminhduc9988.github.io/free-tools-hub/tools/url-encoder.html">URL Encoder</a>
+<a href="https://nguyenminhduc9988.github.io/free-tools-hub/tools/word-counter.html">Word Counter</a>
+<a href="https://nguyenminhduc9988.github.io/free-tools-hub/tools/mortgage-calculator.html">Mortgage Calculator</a>
+<a href="https://nguyenminhduc9988.github.io/free-tools-hub/tools/compound-interest-calculator.html">Compound Interest</a>
+<a href="https://nguyenminhduc9988.github.io/free-tools-hub/tools/jwt-decoder.html">JWT Decoder</a>
+<a href="https://nguyenminhduc9988.github.io/free-tools-hub/tools/sql-formatter.html">SQL Formatter</a>
+<a href="https://nguyenminhduc9988.github.io/free-tools-hub/tools/markdown-to-html.html">Markdown to HTML</a>
+<a href="https://nguyenminhduc9988.github.io/free-tools-hub/tools/uuid-generator.html">UUID Generator</a>
+</div>
+</div>
 
-    <div class="sites-grid">
-      <a href="https://nguyenminhduc9988.github.io/finance-daily/" class="site-card site-finance">
-        <img class="card-thumb" src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&h=225&fit=crop" alt="Stack of gold coins and cash representing personal finance and wealth building" width="400" height="225" loading="lazy" decoding="async">
-        <div class="card-body">
-        <div class="site-icon">💰</div>
-        <h3>Finance Daily</h3>
-        <p class="site-desc">Smart money tips, investing guides, tax optimization, and wealth-building strategies. From index funds to passive income &mdash; everything you need to grow your net worth.</p>
-        <span class="site-link">
-          Read Finance Daily
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </span>
-        </div>
-      </a>
-
-      <a href="https://nguyenminhduc9988.github.io/crypto-brief/" class="site-card site-crypto">
-        <img class="card-thumb" src="https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=400&h=225&fit=crop" alt="Cryptocurrency concept with glowing Bitcoin symbol and digital network" width="400" height="225" loading="lazy" decoding="async">
-        <div class="card-body">
-        <div class="site-icon">₿</div>
-        <h3>Crypto Brief</h3>
-        <p class="site-desc">DeFi explainers, wallet guides, Layer 2 breakdowns, and tax strategies. Master crypto without the hype &mdash; just clear, actionable intelligence.</p>
-        <span class="site-link">
-          Read Crypto Brief
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </span>
-        </div>
-      </a>
-
-      <a href="https://nguyenminhduc9988.github.io/health-today/" class="site-card site-health">
-        <img class="card-thumb" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&h=225&fit=crop" alt="Fresh healthy foods and vegetables arranged on a wooden table for wellness" width="400" height="225" loading="lazy" decoding="async">
-        <div class="card-body">
-        <div class="site-icon">🫀</div>
-        <h3>Health Today</h3>
-        <p class="site-desc">Science-backed wellness, fitness routines, nutrition guides, and mental health strategies. Sleep better, eat smarter, and feel your best every day.</p>
-        <span class="site-link">
-          Read Health Today
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </span>
-        </div>
-      </a>
-
-      <a href="https://nguyenminhduc9988.github.io/productivity-hacks/" class="site-card site-productivity">
-        <img class="card-thumb" src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=400&h=225&fit=crop" alt="Organized desk workspace with laptop, notebook, and coffee for productive work" width="400" height="225" loading="lazy" decoding="async">
-        <div class="card-body">
-        <div class="site-icon">⚡</div>
-        <h3>Productivity Hacks</h3>
-        <p class="site-desc">Deep work strategies, time-blocking systems, AI tools, and habit design. 10x your output without burning out &mdash; work smarter, not harder.</p>
-        <span class="site-link">
-          Read Productivity Hacks
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </span>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <!-- Subscribe CTA -->
-  <section id="subscribe" class="cta-section">
-    <div class="cta-box">
-      <h2>Get the Daily Edge</h2>
-      <p>Join 50,000+ readers getting smarter every morning. One email. Five minutes. Actionable insights across finance, crypto, health, and productivity.</p>
-      <form class="cta-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Subscribed!'; this.style.opacity='0.6';">
-        <input type="email" placeholder="you@example.com" required>
-        <button type="submit">Get Smarter</button>
-      </form>
-      <p class="cta-note">Free forever. No spam. Unsubscribe anytime.</p>
-    </div>
-  </section>
-</main>
-
-<footer id="contact">
-  <div class="footer-inner">
-    <div class="footer-links">
-      <a href="/">Home</a>
-      <a href="https://nguyenminhduc9988.github.io/finance-daily/">Finance Daily</a>
-      <a href="https://nguyenminhduc9988.github.io/crypto-brief/">Crypto Brief</a>
-      <a href="https://nguyenminhduc9988.github.io/health-today/">Health Today</a>
-      <a href="https://nguyenminhduc9988.github.io/productivity-hacks/">Productivity Hacks</a>
-      <a href="https://github.com/nguyenminhduc9988">GitHub</a>
-    </div>
-    <p class="footer-copy">&copy; 2026 Duc Nguyen. All rights reserved.</p>
-  </div>
+<footer>
+<p>© 2026 MOJO Network — Built with AI · All tools are 100% client-side and private</p>
+<p>Support this project: <a href="https://github.com/sponsors/nguyenminhduc9988">GitHub Sponsors</a></p>
 </footer>
-
+</div>
 </body>
 </html>
