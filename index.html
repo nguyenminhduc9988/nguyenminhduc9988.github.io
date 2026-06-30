@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="ko-fi-verification" content="64ea4528-4867-47f4-9dbd-3e9dc4a42179">
 <meta name="google-adsense-account" content="ca-pub-1432831545676654">
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7E63EG326X"></script>
@@ -1190,5 +1191,20 @@ const cardObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.05, rootMargin: '0px 0px -60px 0px' });
 cards.forEach(el => cardObserver.observe(el));
 </script>
+
+<!-- Ko-fi Floating Chat -->
+<script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+<script>
+  kofiWidgetOverlay.draw('theaiproducer', {
+    'type': 'floating-chat',
+    'floating-chat.donateButton.text': 'Support me',
+    'floating-chat.donateButton.background-color': '#00b9fe',
+    'floating-chat.donateButton.text-color': '#fff'
+  });
+</script>
+
+<!-- Ko-fi Support Widget -->
+<script type="text/javascript" src="https://storage.ko-fi.com/cdn/widget/Widget_2.js"></script>
+<script type="text/javascript">kofiwidget2.init("Support me on Ko-fi", "#72a4f2", "Q2V222BH09");kofiwidget2.draw();</script>
 </body>
 </html>
