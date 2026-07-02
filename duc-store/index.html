@@ -1,0 +1,1816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="ko-fi-verification" content="64ea4528-4867-47f4-9dbd-3e9dc4a42179">
+<meta name="google-adsense-account" content="ca-pub-1432831545676654">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7E63EG326X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-7E63EG326X");
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duc Nguyen — 35 Digital Products for Developers &amp; Makers</title>
+<meta name="description" content="35 battle-tested digital products to ship faster, earn more, and work smarter. AI prompt packs, interview guides, dev toolkits, checklists and cheat sheets. From $2.99 to $7.99 PWYW. July Sale: 25% OFF code JULY25.">
+<meta property="og:title" content="Duc Nguyen — Digital Products for Developers & Makers">
+<meta property="og:description" content="32 digital products. July Spotlight: AI Coding Agent Toolkit (2026) — 50 workflows for Claude Code, Cursor & Copilot. Use JULY25 for 25% off.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ducminh5.gumroad.com/">
+<meta property="og:image" content="https://ducminh5.gumroad.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-surface: #12121a;
+  --bg-elevated: #1a1a2e;
+  --border-default: #1e1e2e;
+  --border-hover: #2e2e4e;
+  --accent-primary: #6366f1;
+  --accent-glow: rgba(99, 102, 241, 0.3);
+  --accent-secondary: #a855f7;
+  --positive: #22c55e;
+  --negative: #ef4444;
+  --warning: #f59e0b;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --font-display: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-display);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ============ NAV ============ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-default);
+  transition: background 0.3s;
+}
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0.875rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+.nav-logo-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+.nav-stats {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.nav-stat {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+.nav-stat strong {
+  color: var(--positive);
+  font-weight: 600;
+}
+.nav-follow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.nav-follow a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s;
+}
+.nav-follow a:hover { color: var(--accent-primary); }
+
+/* ============ HERO ============ */
+.hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 8rem 1.5rem 5rem;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 40%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 70% 60%, rgba(168, 85, 247, 0.12) 0%, transparent 50%),
+              radial-gradient(circle at 50% 80%, rgba(34, 197, 94, 0.08) 0%, transparent 40%);
+  animation: aurora 15s ease-in-out infinite alternate;
+}
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.5;
+}
+@keyframes aurora {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(-2%, 1%) rotate(1deg); }
+  100% { transform: translate(1%, -1%) rotate(-0.5deg); }
+}
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  animation: float 8s ease-in-out infinite;
+}
+.hero-orb-1 {
+  width: 500px;
+  height: 500px;
+  background: var(--accent-primary);
+  top: 10%;
+  left: -5%;
+  animation-delay: 0s;
+}
+.hero-orb-2 {
+  width: 400px;
+  height: 400px;
+  background: var(--accent-secondary);
+  bottom: 5%;
+  right: -5%;
+  animation-delay: -3s;
+}
+.hero-orb-3 {
+  width: 300px;
+  height: 300px;
+  background: #06b6d4;
+  top: 50%;
+  left: 40%;
+  animation-delay: -5s;
+  opacity: 0.2;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 1rem;
+  border-radius: var(--radius-full);
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  font-size: 0.8rem;
+  color: var(--accent-primary);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 0.6s var(--ease-out) both;
+}
+.hero-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--positive);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.5); }
+}
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+  animation: fadeInUp 0.6s var(--ease-out) 0.1s both;
+}
+.hero h1 .gradient-text {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 40%, #ec4899 70%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-sub {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  animation: fadeInUp 0.6s var(--ease-out) 0.2s both;
+}
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+  animation: fadeInUp 0.6s var(--ease-out) 0.3s both;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s var(--ease-spring), box-shadow 0.2s;
+  box-shadow: 0 4px 20px var(--accent-glow);
+}
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 30px var(--accent-glow);
+}
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: transparent;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 1rem;
+  border: 1px solid var(--border-hover);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-secondary:hover {
+  border-color: var(--accent-primary);
+  background: rgba(99, 102, 241, 0.08);
+}
+.hero-social-proof {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  animation: fadeInUp 0.6s var(--ease-out) 0.4s both;
+}
+.hero-avatars {
+  display: flex;
+}
+.hero-avatars img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--bg-primary);
+  margin-left: -8px;
+  object-fit: cover;
+}
+.hero-avatars img:first-child { margin-left: 0; }
+.hero-social-text {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+.hero-social-text strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ============ FLOATING ICONS ============ */
+.hero-floating-icons {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.floating-icon {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0.15;
+  animation: floatIcon 6s ease-in-out infinite;
+}
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+/* ============ SOCIAL PROOF BAR ============ */
+.stats-bar {
+  position: relative;
+  z-index: 1;
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-default);
+  border-bottom: 1px solid var(--border-default);
+}
+.stats-bar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+.stat-item {
+  text-align: center;
+}
+.stat-number {
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+/* ============ CATEGORY FILTER ============ */
+.filter-section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 0;
+}
+.filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.filter-pill {
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-full);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.filter-pill:hover, .filter-pill.active {
+  background: rgba(99, 102, 241, 0.12);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+/* ============ PRODUCTS GRID ============ */
+.products-section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ============ PRODUCT CARD ============ */
+.product-card {
+  position: relative;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  padding: 1.75rem;
+  transition: all 0.3s var(--ease-out);
+  text-decoration: none;
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: cardIn 0.5s var(--ease-out) forwards;
+}
+.product-card:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 40px rgba(99, 102, 241, 0.15), 0 0 0 1px var(--accent-primary);
+}
+@keyframes cardIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+.card-badges {
+  display: flex;
+  gap: 0.375rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.badge {
+  padding: 0.2rem 0.625rem;
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.badge-free {
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--positive);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+.badge-best {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--warning);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+.badge-new {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--accent-primary);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+.badge-category {
+  background: rgba(148, 163, 184, 0.1);
+  color: var(--text-muted);
+  border: 1px solid var(--border-default);
+}
+.badge-hot {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--negative);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+/* ============ ANNOUNCEMENT BAR ============ */
+.announce-bar {
+  position: relative;
+  z-index: 101;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  color: #fff;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  letter-spacing: 0.01em;
+}
+.announce-bar a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
+.announce-bar strong { font-weight: 800; }
+
+.card-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 0.75rem;
+  transition: color 0.2s;
+}
+.product-card:hover .card-title {
+  color: var(--accent-primary);
+}
+.card-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin-bottom: 1.25rem;
+}
+.card-tag {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background: rgba(100, 116, 139, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+.card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-default);
+}
+.card-price {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.card-price-free {
+  color: var(--positive);
+}
+.card-price-paid {
+  color: var(--text-primary);
+}
+.card-price-original {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+  margin-left: 0.5rem;
+}
+.card-cta {
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: rgba(99, 102, 241, 0.12);
+  color: var(--accent-primary);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.trust-badges {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  background: var(--bg-elevated);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-default);
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.product-card:hover .trust-item {
+  border-color: var(--accent-primary);
+  color: var(--text-secondary);
+}
+
+@media (max-width: 480px) {
+  .trust-badges {
+    gap: 0.35rem;
+  }
+  
+  .trust-item {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.4rem;
+  }
+}
+
+.product-card:hover .card-cta {
+  background: var(--accent-primary);
+  color: white;
+  border-color: var(--accent-primary);
+}
+
+.trust-badges {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  background: var(--bg-elevated);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-default);
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.product-card:hover .trust-item {
+  border-color: var(--accent-primary);
+  color: var(--text-secondary);
+}
+
+@media (max-width: 480px) {
+  .trust-badges {
+    gap: 0.35rem;
+  }
+  
+  .trust-item {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.4rem;
+  }
+}
+
+.card-cta-free {
+  background: rgba(34, 197, 94, 0.12);
+  color: var(--positive);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+.product-card:hover .card-cta-free {
+  background: var(--positive);
+  color: var(--bg-primary);
+  border-color: var(--positive);
+}
+
+/* Card color themes */
+.card-icon-purple { background: rgba(99, 102, 241, 0.15); }
+.card-icon-green { background: rgba(34, 197, 94, 0.15); }
+.card-icon-amber { background: rgba(245, 158, 11, 0.15); }
+.card-icon-pink { background: rgba(236, 72, 153, 0.15); }
+.card-icon-cyan { background: rgba(6, 182, 212, 0.15); }
+.card-icon-red { background: rgba(239, 68, 68, 0.15); }
+.card-icon-indigo { background: rgba(99, 102, 241, 0.15); }
+.card-icon-emerald { background: rgba(16, 185, 129, 0.15); }
+
+/* ============ FEATURED BANNER ============ */
+.featured-banner {
+  max-width: 1280px;
+  margin: 0 auto 3rem;
+  padding: 0 1.5rem;
+}
+.featured-inner {
+  position: relative;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.08));
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  overflow: hidden;
+}
+.featured-inner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.15), transparent 70%);
+  border-radius: 50%;
+}
+.featured-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.75rem;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--warning);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+.featured-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.featured-desc {
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin-bottom: 1.5rem;
+}
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+}
+.featured-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: rgba(10, 10, 15, 0.5);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-default);
+}
+.featured-stat-icon {
+  font-size: 1.5rem;
+}
+.featured-stat-text {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.featured-stat-text strong {
+  display: block;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+}
+
+/* ============ BUNDLE CTA ============ */
+.bundle-section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+.bundle-inner {
+  position: relative;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.08), rgba(236, 72, 153, 0.06));
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  border-radius: var(--radius-xl);
+  padding: 3rem;
+  text-align: center;
+  overflow: hidden;
+}
+.bundle-inner::before {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.12), transparent 70%);
+  border-radius: 50%;
+}
+.bundle-inner h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+.bundle-inner p {
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  position: relative;
+}
+.bundle-products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.bundle-product-tag {
+  padding: 0.375rem 0.75rem;
+  background: rgba(10, 10, 15, 0.5);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+.bundle-price {
+  font-family: var(--font-mono);
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  position: relative;
+}
+.bundle-price-save {
+  font-size: 0.875rem;
+  color: var(--positive);
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+/* ============ NEWSLETTER CTA ============ */
+.newsletter-section {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+  text-align: center;
+}
+.newsletter-inner {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+}
+.newsletter-inner h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.newsletter-inner p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+.newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 450px;
+  margin: 0 auto;
+}
+.newsletter-form input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-default);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.newsletter-form input:focus {
+  border-color: var(--accent-primary);
+}
+.newsletter-form input::placeholder {
+  color: var(--text-muted);
+}
+.newsletter-form button {
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-full);
+  border: none;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 10px var(--accent-glow);
+}
+.newsletter-form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px var(--accent-glow);
+}
+.newsletter-privacy {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+}
+
+/* ============ FOOTER ============ */
+.footer {
+  border-top: 1px solid var(--border-default);
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+.footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer-left {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+.footer-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--accent-primary); }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+  .hero { min-height: auto; padding: 7rem 1.25rem 3rem; }
+  .products-grid { grid-template-columns: 1fr; }
+  .stats-bar-inner { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+  .nav-stats { display: none; }
+  .hero-cta-group { flex-direction: column; width: 100%; max-width: 300px; }
+  .hero-cta-group .btn-primary,
+  .hero-cta-group .btn-secondary { width: 100%; justify-content: center; }
+  .newsletter-form { flex-direction: column; }
+  .footer-inner { flex-direction: column; text-align: center; }
+  .featured-inner { padding: 1.5rem; }
+  .featured-grid { grid-template-columns: 1fr; }
+  .bundle-inner { padding: 2rem 1.5rem; }
+  .card-bottom { flex-direction: column; gap: 0.75rem; align-items: flex-start; }
+}
+@media (max-width: 480px) {
+  .hero h1 { font-size: 2rem; }
+  .filter-pills { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
+  .filter-pill { white-space: nowrap; flex-shrink: 0; }
+}
+
+/* ============ CSS-ONLY FILTER ============ */
+.filter-radio { display: none; }
+.filter-radio:checked + .filter-pill {
+  background: rgba(99, 102, 241, 0.15);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+.product-card[data-cat="ai-money"],
+.product-card[data-cat="devtools"],
+.product-card[data-cat="productivity"],
+.product-card[data-cat="freemium"] {
+  display: block;
+}
+.filter-radio[value="all"]:checked ~ .products-section .product-card { display: block; }
+.filter-radio[value="ai-money"]:checked ~ .products-section .product-card[data-cat="ai-money"] { display: block; }
+.filter-radio[value="ai-money"]:checked ~ .products-section .product-card:not([data-cat="ai-money"]) { display: none; }
+.filter-radio[value="devtools"]:checked ~ .products-section .product-card[data-cat="devtools"] { display: block; }
+.filter-radio[value="devtools"]:checked ~ .products-section .product-card:not([data-cat="devtools"]) { display: none; }
+.filter-radio[value="productivity"]:checked ~ .products-section .product-card[data-cat="productivity"] { display: block; }
+.filter-radio[value="productivity"]:checked ~ .products-section .product-card:not([data-cat="productivity"]) { display: none; }
+.filter-radio[value="freemium"]:checked ~ .products-section .product-card[data-cat="freemium"] { display: block; }
+.filter-radio[value="freemium"]:checked ~ .products-section .product-card:not([data-cat="freemium"]) { display: none; }
+
+/* === Cover image (added) === */
+.product-card { display:flex; flex-direction:column; }
+.card-cover { width:100%; aspect-ratio: 8/5; object-fit:cover; border-radius: var(--radius-md) var(--radius-md) 0 0; margin: -1px -1px 0 -1px; width: calc(100% + 2px); border-bottom: 1px solid var(--border-default); }
+
+</style>
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1432831545676654" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- ============ JULY PROMO BANNER ============ -->
+<div style="background:linear-gradient(90deg,#6366f1,#a855f7,#ec4899);text-align:center;padding:0.5rem 1rem;font-size:0.85rem;font-weight:600;color:#fff;position:relative;z-index:101;letter-spacing:0.01em;">
+  🎉 <strong>July Sale — 25% OFF</strong> all paid products · Use code <span style="background:rgba(255,255,255,0.2);padding:2px 8px;border-radius:4px;font-family:var(--font-mono);font-weight:700;">JULY25</span> at checkout · <a href="#products" style="color:#fff;text-decoration:underline;font-weight:700;">Shop Now →</a>
+</div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon">⚡</div>
+      Duc Nguyen
+    </a>
+    <div class="nav-stats">
+    <div class="nav-stat"><strong>32</strong> products</div>
+    <div class="nav-stat"><strong>3</strong> free</div>
+    </div>
+    <div class="nav-follow">
+      <a href="https://ducminh5.gumroad.com" target="_blank" rel="noopener">Gumroad</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ ANNOUNCEMENT BAR ============ -->
+<div class="announce-bar">
+  🔥 <strong>July Spotlight #2:</strong> The AI Coding Agent Toolkit (2026) — 50 workflows for Claude Code, Cursor & Copilot. <a href="https://ducminh5.gumroad.com/l/ivfsxu" target="_blank" rel="noopener">Grab it for $2.99 →</a> · Use code <strong>JULY25</strong> for 25% off · 3 <a href="#free">free products</a> available.
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
+  </div>
+  <div class="hero-floating-icons">
+    <span class="floating-icon" style="top:15%;left:10%;animation-delay:0s">🚀</span>
+    <span class="floating-icon" style="top:25%;right:12%;animation-delay:-1s">💻</span>
+    <span class="floating-icon" style="top:60%;left:8%;animation-delay:-2s">🤖</span>
+    <span class="floating-icon" style="top:70%;right:15%;animation-delay:-3s">⚡</span>
+    <span class="floating-icon" style="top:40%;left:85%;animation-delay:-4s">🛠️</span>
+    <span class="floating-icon" style="top:80%;left:25%;animation-delay:-5s">💡</span>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      32 Products · July Spotlight #2: AI Coding Agent Toolkit 🤖
+    </div>
+    <h1><span class="gradient-text">Ship Faster. Earn More. Work Smarter.</span></h1>
+    <p class="hero-sub">Battle-tested checklists, cheat sheets, prompt libraries, and AI toolkits — everything you need to build a profitable one-person business.</p>
+    <div class="hero-cta-group">
+      <a href="#products" class="btn-primary">
+        <span>Browse All Products</span>
+        <span>↓</span>
+      </a>
+      <a href="#free" class="btn-secondary">
+        🎁 Browse Pay-What-You-Want Packs
+      </a>
+    </div>
+    <div class="hero-social-proof">
+      <div class="hero-avatars">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=face" alt="User" width="32" height="32" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=64&h=64&fit=crop&crop=face" alt="User" width="32" height="32" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=64&h=64&fit=crop&crop=face" alt="User" width="32" height="32" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop&crop=face" alt="User" width="32" height="32" loading="lazy">
+      </div>
+      <p class="hero-social-text"><strong>🤖 AI Coding Agent Toolkit (2026)</strong> is this week's spotlight — 50 workflows, prompts & guardrails for Claude Code, Cursor & Copilot.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS BAR ============ -->
+<div class="stats-bar">
+  <div class="stats-bar-inner">
+    <div class="stat-item">
+      <div class="stat-number">32</div>
+      <div class="stat-label">Digital Products</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">2</div>
+      <div class="stat-label">Best Sellers</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">$0+</div>
+      <div class="stat-label">Pay What You Want</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">Instant</div>
+      <div class="stat-label">Download</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FEATURED PRODUCT ============ -->
+<div class="featured-banner">
+  <div class="featured-inner">
+    <div class="featured-label">🤖 Featured · $2.99 · 50 Workflows · Claude Code · Cursor · Copilot</div>
+    <h2 class="featured-title">The AI Coding Agent Toolkit (2026) — 50 Workflows, Prompts & Guardrails</h2>
+    <p class="featured-desc">AI coding agents are changing how we build software. This toolkit gives you 50 battle-tested workflows for Claude Code, Cursor, and GitHub Copilot — from refactoring patterns and test generation to multi-file editing strategies, debug workflows, and guardrails to prevent agent hallucinations. Includes prompt chains for complex tasks, context window optimization, and real-world migration guides. Perfect for developers who want to 10x their output with AI coding agents.</p>
+    <div class="featured-grid">
+      <div class="featured-stat">
+        <span class="featured-stat-icon">🤖</span>
+        <div class="featured-stat-text"><strong>50</strong> Workflows</div>
+      </div>
+      <div class="featured-stat">
+        <span class="featured-stat-icon">⚙️</span>
+        <div class="featured-stat-text"><strong>Prompts</strong> & Guardrails</div>
+      </div>
+      <div class="featured-stat">
+        <span class="featured-stat-icon">⚡</span>
+        <div class="featured-stat-text"><strong>Instant</strong> Download</div>
+      </div>
+      <div class="featured-stat">
+        <span class="featured-stat-icon">♾️</span>
+        <div class="featured-stat-text"><strong>Lifetime</strong> Updates</div>
+      </div>
+    </div>
+    <a href="https://ducminh5.gumroad.com/l/ivfsxu" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.25rem;padding:0.75rem 2rem;background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));color:#fff;font-weight:600;font-size:1rem;border:none;border-radius:var(--radius-full);text-decoration:none;box-shadow:0 4px 20px var(--accent-glow);">Get the Toolkit — $2.99 →</a>
+  </div>
+</div>
+
+<!-- ============ FILTER ============ -->
+<div class="filter-section">
+  <div class="filter-pills" id="filter-pills">
+    <label class="filter-pill active"><input type="radio" class="filter-radio" name="filter" value="all" checked> All Products</label>
+    <label class="filter-pill"><input type="radio" class="filter-radio" name="filter" value="ai-money"> 💰 AI & Money</label>
+    <label class="filter-pill"><input type="radio" class="filter-radio" name="filter" value="devtools"> 🛠️ Dev Tools</label>
+    <label class="filter-pill"><input type="radio" class="filter-radio" name="filter" value="productivity"> ⚡ Productivity</label>
+    <label class="filter-pill"><input type="radio" class="filter-radio" name="filter" value="freemium"> 🎁 Free</label>
+  </div>
+</div>
+
+<!-- ============ PRODUCTS GRID ============ -->
+<section class="products-section" id="products">
+
+<!-- === ALL 29 LIVE PRODUCTS — Full Catalog (Jul 2026) === -->
+  <!-- 1. 20 Prompts That Automate Your Entire Workday — 🔥 3 sales -->
+  <a href="https://ducminh5.gumroad.com/l/hbszwt" target="_blank" rel="noopener" class="product-card" data-cat="freemium productivity" style="animation-delay: 0.0s">
+    <img src="https://public-files.gumroad.com/yqo44nh30efpnaw2nrhsd4ol39j8" alt="20 Prompts That Automate Your Entire Workday" class="card-cover" loading="lazy" decoding="async">
+    <div class="card-top">
+      <div class="card-icon card-icon-green">⚡</div>
+      <div class="card-badges"><span class="badge badge-hot">🔥 Top Seller</span></div>
+    </div>
+    <h3 class="card-title">20 Prompts That Automate Your Entire Workday</h3>
+    <p class="card-desc">From standup to shutdown — 20 copy-paste prompts for planning your day, reviewing code faster, surviving meetings, and shutting down on time. Battle-tested by senior devs and founders.</p>
+    <div class="card-tags"><span class="card-tag">ChatGPT</span><span class="card-tag">Productivity</span><span class="card-tag">Workday</span></div>
+    <div class="card-bottom">
+      <div class="card-price">Pay What You Want</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 2. 10 AI Prompts That Save Me 5 Hours Every Week — 🔥 3 sales -->
+  <a href="https://ducminh5.gumroad.com/l/wqyawf" target="_blank" rel="noopener" class="product-card" data-cat="freemium devtools" style="animation-delay: 0.02s">
+    <img src="https://public-files.gumroad.com/pp1y7wymnspg4m3ezzdvz4kb9sn5" alt="10 AI Prompts That Save Me 5 Hours Every Week" class="card-cover" loading="lazy" decoding="async">
+    <div class="card-top">
+      <div class="card-icon card-icon-green">⏱️</div>
+      <div class="card-badges"><span class="badge badge-hot">🔥 Top Seller</span></div>
+    </div>
+    <h3 class="card-title">10 AI Prompts That Save Me 5 Hours Every Week</h3>
+    <p class="card-desc">The exact prompts I use to automate repetitive tasks, write documentation, generate tests, and plan sprints. 10 battle-tested prompts you can copy-paste right now.</p>
+    <div class="card-tags"><span class="card-tag">AI</span><span class="card-tag">Productivity</span><span class="card-tag">Free</span></div>
+    <div class="card-bottom">
+      <div class="card-price">Pay What You Want</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 3. 50 Claude Sonnet 5 Prompts -->
+  <a href="https://ducminh5.gumroad.com/l/wplld" target="_blank" rel="noopener" class="product-card" data-cat="devtools" style="animation-delay: 0.04s">
+    <img src="https://public-files.gumroad.com/53x66feo0rbt8w59tgaycewhwlvw" alt="50 Claude Sonnet 5 Prompts" class="card-cover" loading="lazy" decoding="async">
+    <div class="card-top">
+      <div class="card-icon card-icon-purple">🤖</div>
+      <div class="card-badges"><span class="badge badge-new">New</span></div>
+    </div>
+    <h3 class="card-title">50 Claude Sonnet 5 Prompts</h3>
+    <p class="card-desc">Ship code faster, debug smarter, think deeper. 50 prompts across feature dev, debugging, code review, testing & docs — plus 5 mega-workflow chains for complex tasks.</p>
+    <div class="card-tags"><span class="card-tag">Claude</span><span class="card-tag">AI</span><span class="card-tag">Coding</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$2.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 4. The Cold Email Mastery Pack -->
+  <a href="https://ducminh5.gumroad.com/l/mkzdnc" target="_blank" rel="noopener" class="product-card" data-cat="ai-money" style="animation-delay: 0.06s">
+    <img src="https://public-files.gumroad.com/26vvaap492tw15c4jjgo1eldhkld" alt="The Cold Email Mastery Pack" class="card-cover" loading="lazy" decoding="async">
+    <div class="card-top">
+      <div class="card-icon card-icon-pink">📧</div>
+      <div class="card-badges"></div>
+    </div>
+    <h3 class="card-title">The Cold Email Mastery Pack</h3>
+    <p class="card-desc">25 prompts + 10 copy-paste templates that actually get replies. Subject lines, the 4-line cold email, PAS framework, follow-up sequences, and the breakup email.</p>
+    <div class="card-tags"><span class="card-tag">Sales</span><span class="card-tag">Email</span><span class="card-tag">Outreach</span><span class="card-tag">B2B</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$4.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 5. The Complete Git & GitHub Power User Toolkit — July Spotlight -->
+  <a href="https://ducminh5.gumroad.com/l/hbgfj" target="_blank" rel="noopener" class="product-card" data-cat="devtools" style="animation-delay: 0.08s">
+    <div class="card-top">
+      <div class="card-icon card-icon-indigo">🔧</div>
+      <div class="card-badges"><span class="badge badge-best">⭐ Spotlight</span></div>
+    </div>
+    <h3 class="card-title">The Complete Git & GitHub Power User Toolkit</h3>
+    <p class="card-desc">200+ commands, hooks & scripts to master version control. Branching strategies, rebasing, cherry-picking, bisect debugging, interactive rebase, stash management, and CI/CD hooks.</p>
+    <div class="card-tags"><span class="card-tag">Git</span><span class="card-tag">GitHub</span><span class="card-tag">DevOps</span><span class="card-tag">CLI</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$2.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 6. 25 AI Prompts for Developers -->
+  <a href="https://ducminh5.gumroad.com/l/jyqxgf" target="_blank" rel="noopener" class="product-card" data-cat="devtools" style="animation-delay: 0.1s">
+    <img src="https://public-files.gumroad.com/o5unglhnalsosi1ntgkngngsdn95" alt="25 AI Prompts for Developers" class="card-cover" loading="lazy" decoding="async">
+    <div class="card-top">
+      <div class="card-icon card-icon-cyan">🛠️</div>
+      <div class="card-badges"></div>
+    </div>
+    <h3 class="card-title">25 AI Prompts for Developers</h3>
+    <p class="card-desc">Ship faster, debug smarter, document in seconds. Architecture planning, systematic bug hunting, security review, test generation, and README/API docs.</p>
+    <div class="card-tags"><span class="card-tag">AI</span><span class="card-tag">Developer</span><span class="card-tag">Coding</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$2.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 7. 30 Prompts to Land Your Next Developer Job -->
+  <a href="https://ducminh5.gumroad.com/l/dev-interview-prompts" target="_blank" rel="noopener" class="product-card" data-cat="ai-money devtools" style="animation-delay: 0.12s">
+    <img src="https://public-files.gumroad.com/ntkqavdk47k7unf19ue7ecvhtgsl" alt="30 Prompts to Land Your Next Developer Job" class="card-cover" loading="lazy" decoding="async">
+    <div class="card-top">
+      <div class="card-icon card-icon-green">🎯</div>
+      <div class="card-badges"></div>
+    </div>
+    <h3 class="card-title">30 Prompts to Land Your Next Developer Job</h3>
+    <p class="card-desc">Resume tuning, interview prep, system design, and salary negotiation — AI prompts for every step of the job hunt. LeetCode practice, STAR stories, offer scripts.</p>
+    <div class="card-tags"><span class="card-tag">Career</span><span class="card-tag">Interview</span><span class="card-tag">Resume</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$2.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 8. 30 ChatGPT Prompts for Entrepreneurs -->
+  <a href="https://ducminh5.gumroad.com/l/fbjhvh" target="_blank" rel="noopener" class="product-card" data-cat="ai-money" style="animation-delay: 0.14s">
+    <img src="https://public-files.gumroad.com/5nq1qrb3m1612i1jo1qillghnqzb" alt="30 ChatGPT Prompts for Entrepreneurs" class="card-cover" loading="lazy" decoding="async">
+    <div class="card-top">
+      <div class="card-icon card-icon-amber">💡</div>
+      <div class="card-badges"></div>
+    </div>
+    <h3 class="card-title">30 ChatGPT Prompts for Entrepreneurs</h3>
+    <p class="card-desc">Validate ideas, write pitches, scale growth, and manage finances. From idea validation to investor-ready decks, financial modeling, and go-to-market plans.</p>
+    <div class="card-tags"><span class="card-tag">Startup</span><span class="card-tag">Founder</span><span class="card-tag">Business</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$2.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 9. 25 ChatGPT Prompts for Product Managers -->
+  <a href="https://ducminh5.gumroad.com/l/qiiakf" target="_blank" rel="noopener" class="product-card" data-cat="productivity" style="animation-delay: 0.16s">
+    <img src="https://public-files.gumroad.com/8m57xxp3dflj5336at0be6aviyrs" alt="25 ChatGPT Prompts for Product Managers" class="card-cover" loading="lazy" decoding="async">
+    <div class="card-top">
+      <div class="card-icon card-icon-purple">📋</div>
+      <div class="card-badges"></div>
+    </div>
+    <h3 class="card-title">25 ChatGPT Prompts for Product Managers</h3>
+    <p class="card-desc">Ship features faster, write better specs, and run meetings that don't suck. PRDs, roadmaps, user research synthesis, stakeholder updates.</p>
+    <div class="card-tags"><span class="card-tag">PM</span><span class="card-tag">Product</span><span class="card-tag">Agile</span><span class="card-tag">PRD</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$2.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 10. 20 Prompts for Data Analysis & Visualization -->
+  <a href="https://ducminh5.gumroad.com/l/gicacs" target="_blank" rel="noopener" class="product-card" data-cat="devtools productivity" style="animation-delay: 0.18s">
+    <img src="https://public-files.gumroad.com/009tcb0k063055zgsmq5cnwbida6" alt="20 Prompts for Data Analysis & Visualization" class="card-cover" loading="lazy" decoding="async">
+    <div class="card-top">
+      <div class="card-icon card-icon-cyan">📊</div>
+      <div class="card-badges"></div>
+    </div>
+    <h3 class="card-title">20 Prompts for Data Analysis & Visualization</h3>
+    <p class="card-desc">Clean, analyze, and visualize any dataset. Python + SQL focused — from messy CSVs and exploratory analysis to production dashboards and board-ready reports.</p>
+    <div class="card-tags"><span class="card-tag">Data</span><span class="card-tag">Python</span><span class="card-tag">SQL</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$2.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 11. 30 Prompts for Content Creators -->
+  <a href="https://ducminh5.gumroad.com/l/oqmplt" target="_blank" rel="noopener" class="product-card" data-cat="ai-money productivity" style="animation-delay: 0.2s">
+    <img src="https://public-files.gumroad.com/dgwxipme2bis2lfgmdbfdyipzt8s" alt="30 Prompts for Content Creators" class="card-cover" loading="lazy" decoding="async">
+    <div class="card-top">
+      <div class="card-icon card-icon-pink">✍️</div>
+      <div class="card-badges"></div>
+    </div>
+    <h3 class="card-title">30 Prompts for Content Creators</h3>
+    <p class="card-desc">Write faster, grow your audience, never run out of ideas. Hooks, video scripts, SEO outlines, repurposing across platforms, and newsletter sequences.</p>
+    <div class="card-tags"><span class="card-tag">Content</span><span class="card-tag">Creator</span><span class="card-tag">SEO</span><span class="card-tag">Writing</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$2.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 12. 25 Prompts for Freelance Developers -->
+  <a href="https://ducminh5.gumroad.com/l/jabut" target="_blank" rel="noopener" class="product-card" data-cat="ai-money" style="animation-delay: 0.22s">
+    <img src="https://public-files.gumroad.com/wbc7mdjxkp41lumktc9n59uxk9nk" alt="25 Prompts for Freelance Developers" class="card-cover" loading="lazy" decoding="async">
+    <div class="card-top">
+      <div class="card-icon card-icon-emerald">💼</div>
+      <div class="card-badges"></div>
+    </div>
+    <h3 class="card-title">25 Prompts for Freelance Developers</h3>
+    <p class="card-desc">Land clients, write proposals, price projects, and scale your income. Lead-gen, scope-of-work templates, pricing psychology, and client onboarding flows.</p>
+    <div class="card-tags"><span class="card-tag">Freelance</span><span class="card-tag">Clients</span><span class="card-tag">Proposals</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$2.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 13. The 2026 AI Maker's Stack -->
+  <a href="https://ducminh5.gumroad.com/l/yxyzlr" target="_blank" rel="noopener" class="product-card" data-cat="ai-money productivity" style="animation-delay: 0.24s">
+    <img src="https://public-files.gumroad.com/t4u3vypgvt8uytoortufjp3qu1md" alt="The 2026 AI Maker's Stack" class="card-cover" loading="lazy" decoding="async">
+    <div class="card-top">
+      <div class="card-icon card-icon-amber">🧰</div>
+      <div class="card-badges"></div>
+    </div>
+    <h3 class="card-title">The 2026 AI Maker's Stack</h3>
+    <p class="card-desc">30 tools to run a one-person business. From AI coding assistants to email automation, content creation, analytics, and payments. The complete solopreneur toolkit.</p>
+    <div class="card-tags"><span class="card-tag">AI Tools</span><span class="card-tag">Solopreneur</span><span class="card-tag">2026</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$4.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 14. The Weekly Reset Checklist -->
+  <a href="https://ducminh5.gumroad.com/l/pbmmnz" target="_blank" rel="noopener" class="product-card" data-cat="freemium productivity" style="animation-delay: 0.26s">
+    <div class="card-top">
+      <div class="card-icon card-icon-green">🔄</div>
+      <div class="card-badges"></div>
+    </div>
+    <h3 class="card-title">The Weekly Reset Checklist</h3>
+    <p class="card-desc">40 questions to reflect, recharge, and plan your best week. GTD-compatible framework for developers and knowledge workers who want to close loops.</p>
+    <div class="card-tags"><span class="card-tag">Productivity</span><span class="card-tag">Planning</span><span class="card-tag">Weekly Review</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$2.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 15. 15 ChatGPT Prompts That Automate Your Morning Routine -->
+  <a href="https://ducminh5.gumroad.com/l/zoply" target="_blank" rel="noopener" class="product-card" data-cat="freemium productivity" style="animation-delay: 0.28s">
+    <div class="card-top">
+      <div class="card-icon card-icon-amber">🌅</div>
+      <div class="card-badges"></div>
+    </div>
+    <h3 class="card-title">15 Prompts That Automate Your Morning Routine</h3>
+    <p class="card-desc">Start every day with AI-powered intention. 15 prompts for daily planning, news digestion, workout generation, meal prep, and mindset setting.</p>
+    <div class="card-tags"><span class="card-tag">Morning</span><span class="card-tag">Habits</span><span class="card-tag">AI</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$2.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 16. The Remote Work Productivity Checklist -->
+  <a href="https://ducminh5.gumroad.com/l/gmjcr" target="_blank" rel="noopener" class="product-card" data-cat="productivity" style="animation-delay: 0.3s">
+    <div class="card-top">
+      <div class="card-icon card-icon-cyan">🏠</div>
+      <div class="card-badges"></div>
+    </div>
+    <h3 class="card-title">The Remote Work Productivity Checklist</h3>
+    <p class="card-desc">47 habits that separate top performers from burnout. Deep work rituals, async communication, ergonomics, energy management, and WFH survival strategies.</p>
+    <div class="card-tags"><span class="card-tag">Remote Work</span><span class="card-tag">Productivity</span><span class="card-tag">Deep Work</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$2.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 17. The Senior Engineer's Production Readiness Checklist -->
+  <a href="https://ducminh5.gumroad.com/l/gomas" target="_blank" rel="noopener" class="product-card" data-cat="devtools" style="animation-delay: 0.32s">
+    <div class="card-top">
+      <div class="card-icon card-icon-red">🚀</div>
+      <div class="card-badges"></div>
+    </div>
+    <h3 class="card-title">The Senior Engineer's Production Readiness Checklist</h3>
+    <p class="card-desc">84 items before you ship to prod. Monitoring, alerting, rollback plans, security checks, load testing, database migrations, and deployment runbooks.</p>
+    <div class="card-tags"><span class="card-tag">DevOps</span><span class="card-tag">Production</span><span class="card-tag">Senior</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$2.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 18. The AI Coding Agent Toolkit (2026) -->
+  <a href="https://ducminh5.gumroad.com/l/ivfsxu" target="_blank" rel="noopener" class="product-card" data-cat="devtools" style="animation-delay: 0.34s">
+    <div class="card-top">
+      <div class="card-icon card-icon-purple">🤖</div>
+      <div class="card-badges"><span class="badge badge-new">New</span></div>
+    </div>
+    <h3 class="card-title">The AI Coding Agent Toolkit (2026)</h3>
+    <p class="card-desc">50 workflows, prompts & guardrails for Claude Code, Cursor & Copilot. Refactoring patterns, test generation, debug workflows, and multi-file editing strategies.</p>
+    <div class="card-tags"><span class="card-tag">Claude Code</span><span class="card-tag">Cursor</span><span class="card-tag">Copilot</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$2.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 19. Complete Guide to Making Money with AI Tools -->
+  <a href="https://ducminh5.gumroad.com/l/yfolrv" target="_blank" rel="noopener" class="product-card" data-cat="ai-money" style="animation-delay: 0.36s">
+    <div class="card-top">
+      <div class="card-icon card-icon-emerald">💰</div>
+      <div class="card-badges"></div>
+    </div>
+    <h3 class="card-title">Complete Guide to Making Money with AI Tools</h3>
+    <p class="card-desc">7 proven models + 90-day action plan. Digital products, freelancing, content creation, SaaS micro-products, automation agency, and passive income strategies.</p>
+    <div class="card-tags"><span class="card-tag">AI</span><span class="card-tag">Money</span><span class="card-tag">Side Hustle</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$2.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 20. VS Code Productivity Templates -->
+  <a href="https://ducminh5.gumroad.com/l/pnuga" target="_blank" rel="noopener" class="product-card" data-cat="devtools productivity" style="animation-delay: 0.38s">
+    <div class="card-top">
+      <div class="card-icon card-icon-cyan">⌨️</div>
+      <div class="card-badges"></div>
+    </div>
+    <h3 class="card-title">VS Code Productivity Templates</h3>
+    <p class="card-desc">Settings, snippets & workflows that save 2 hours/day. Custom keybindings, multi-root workspace configs, debug launch templates, and extension bundles.</p>
+    <div class="card-tags"><span class="card-tag">VS Code</span><span class="card-tag">IDE</span><span class="card-tag">Snippets</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$2.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 21. Notion Finance Tracker Templates -->
+  <a href="https://ducminh5.gumroad.com/l/rpgnc" target="_blank" rel="noopener" class="product-card" data-cat="productivity" style="animation-delay: 0.4s">
+    <div class="card-top">
+      <div class="card-icon card-icon-green">📊</div>
+      <div class="card-badges"></div>
+    </div>
+    <h3 class="card-title">Notion Finance Tracker Templates</h3>
+    <p class="card-desc">12 ready-to-use systems. Monthly budget, net worth tracker, expense categorizer, savings goals, subscription manager, and investment portfolio dashboard.</p>
+    <div class="card-tags"><span class="card-tag">Notion</span><span class="card-tag">Finance</span><span class="card-tag">Budget</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$2.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 22. 50 Docker Commands Every Developer Should Know -->
+  <a href="https://ducminh5.gumroad.com/l/cncghh" target="_blank" rel="noopener" class="product-card" data-cat="devtools" style="animation-delay: 0.42s">
+    <div class="card-top">
+      <div class="card-icon card-icon-indigo">🐳</div>
+      <div class="card-badges"></div>
+    </div>
+    <h3 class="card-title">50 Docker Commands Every Developer Should Know</h3>
+    <p class="card-desc">The complete survival guide. Container management, multi-stage builds, docker-compose networking, volume mounts, health checks, and production hardening.</p>
+    <div class="card-tags"><span class="card-tag">Docker</span><span class="card-tag">DevOps</span><span class="card-tag">Containers</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$2.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 23. Developer API Cheat Sheet Collection — Volume 2 -->
+  <a href="https://ducminh5.gumroad.com/l/vwkqujv" target="_blank" rel="noopener" class="product-card" data-cat="devtools" style="animation-delay: 0.44s">
+    <div class="card-top">
+      <div class="card-icon card-icon-purple">🔗</div>
+      <div class="card-badges"></div>
+    </div>
+    <h3 class="card-title">Developer API Cheat Sheet Collection — Vol 2</h3>
+    <p class="card-desc">REST, GraphQL, WebSocket patterns. Authentication flows, pagination strategies, rate limiting, error handling, and real-world API integration examples.</p>
+    <div class="card-tags"><span class="card-tag">API</span><span class="card-tag">REST</span><span class="card-tag">GraphQL</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$2.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 24. Complete Guide to Building Passive Income with AI Automation -->
+  <a href="https://ducminh5.gumroad.com/l/dpljn" target="_blank" rel="noopener" class="product-card" data-cat="ai-money" style="animation-delay: 0.46s">
+    <div class="card-top">
+      <div class="card-icon card-icon-emerald">🏦</div>
+      <div class="card-badges"></div>
+    </div>
+    <h3 class="card-title">Passive Income with AI Automation</h3>
+    <p class="card-desc">Build automated income streams with AI. Digital products, content repurposing, email sequences, social media automation, and AI-powered affiliate marketing.</p>
+    <div class="card-tags"><span class="card-tag">AI</span><span class="card-tag">Passive Income</span><span class="card-tag">Automation</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$2.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 25. Developer Productivity Template Pack -->
+  <a href="https://ducminh5.gumroad.com/l/gveca" target="_blank" rel="noopener" class="product-card" data-cat="devtools productivity" style="animation-delay: 0.48s">
+    <div class="card-top">
+      <div class="card-icon card-icon-cyan">📝</div>
+      <div class="card-badges"></div>
+    </div>
+    <h3 class="card-title">Developer Productivity Template Pack</h3>
+    <p class="card-desc">25 battle-tested templates. Sprint planning, code review checklists, incident response, architecture decision records, and onboarding documents.</p>
+    <div class="card-tags"><span class="card-tag">Templates</span><span class="card-tag">Engineering</span><span class="card-tag">Planning</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$2.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 26. Prompt Engineering Masterclass -->
+  <a href="https://ducminh5.gumroad.com/l/dvxog" target="_blank" rel="noopener" class="product-card" data-cat="devtools productivity" style="animation-delay: 0.5s">
+    <div class="card-top">
+      <div class="card-icon card-icon-purple">🧠</div>
+      <div class="card-badges"></div>
+    </div>
+    <h3 class="card-title">Prompt Engineering Masterclass</h3>
+    <p class="card-desc">Get 10x better AI results. Chain-of-thought, few-shot, role-playing, structured output, and advanced prompting techniques for GPT, Claude, and Gemini.</p>
+    <div class="card-tags"><span class="card-tag">Prompt Engineering</span><span class="card-tag">AI</span><span class="card-tag">GPT</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$2.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 27. AI Side Hustle Blueprint -->
+  <a href="https://ducminh5.gumroad.com/l/vyexeg" target="_blank" rel="noopener" class="product-card" data-cat="ai-money" style="animation-delay: 0.52s">
+    <div class="card-top">
+      <div class="card-icon card-icon-amber">🚀</div>
+      <div class="card-badges"></div>
+    </div>
+    <h3 class="card-title">AI Side Hustle Blueprint</h3>
+    <p class="card-desc">15 proven strategies to make money with AI. Micro-SaaS, prompt packs, AI writing services, automated content, and digital products — step-by-step guides.</p>
+    <div class="card-tags"><span class="card-tag">AI</span><span class="card-tag">Side Hustle</span><span class="card-tag">Money</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$2.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 28. Developer API Cheat Sheet Collection — Volume 1 -->
+  <a href="https://ducminh5.gumroad.com/l/njmfcx" target="_blank" rel="noopener" class="product-card" data-cat="devtools" style="animation-delay: 0.54s">
+    <div class="card-top">
+      <div class="card-icon card-icon-indigo">📡</div>
+      <div class="card-badges"></div>
+    </div>
+    <h3 class="card-title">Developer API Cheat Sheet Collection</h3>
+    <p class="card-desc">50+ APIs with code examples. Stripe, Twilio, SendGrid, OpenAI, GitHub, and more — ready-to-use request/response patterns for every major API.</p>
+    <div class="card-tags"><span class="card-tag">API</span><span class="card-tag">Backend</span><span class="card-tag">Code</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$2.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 29. AI Prompt Master Library — 330+ Prompts -->
+  <a href="https://ducminh5.gumroad.com/l/vtwhkc" target="_blank" rel="noopener" class="product-card" data-cat="devtools productivity freemium" style="animation-delay: 0.56s">
+    <div class="card-top">
+      <div class="card-icon card-icon-green">📚</div>
+      <div class="card-badges"><span class="badge badge-hot">🔥 330+ Prompts</span></div>
+    </div>
+    <h3 class="card-title">AI Prompt Master Library — 330+ Prompts</h3>
+    <p class="card-desc">The ultimate prompt collection. Development, writing, marketing, research, data analysis, productivity, and creative work — every use case covered.</p>
+    <div class="card-tags"><span class="card-tag">AI</span><span class="card-tag">Prompts</span><span class="card-tag">Library</span><span class="card-tag">All-in-One</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$2.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 11. System Design Cheat Sheet -->
+  <a href="https://ducminh5.gumroad.com/l/ckiesp" target="_blank" rel="noopener" class="product-card" data-cat="devtools" style="animation-delay: 0.2s">
+    <div class="card-top">
+      <div class="card-icon card-icon-indigo">🏗️</div>
+      <div class="card-badges"><span class="badge badge-new">New</span></div>
+    </div>
+    <h3 class="card-title">System Design Cheat Sheet</h3>
+    <p class="card-desc">40 patterns for interviews and production systems. CAP theorem, caching, sharding, message queues, microservices, API design, observability, security, and 6 real-world case studies.</p>
+    <div class="card-tags"><span class="card-tag">Architecture</span><span class="card-tag">Interviews</span><span class="card-tag">Distributed</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$3.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 12. Git Workflow Checklist — New -->
+  <a href="https://ducminh5.gumroad.com/l/git-workflow-checklist" target="_blank" rel="noopener" class="product-card" data-cat="devtools" style="animation-delay: 0.22s">
+    <div class="card-top">
+      <div class="card-icon card-icon-green">📋</div>
+      <div class="card-badges"><span class="badge badge-new">New</span></div>
+    </div>
+    <h3 class="card-title">Git Workflow Checklist</h3>
+    <p class="card-desc">47 commands and patterns for daily development. Interactive rebase, cherry-pick, stash workflows, bisect for debugging, and commit message patterns senior engineers actually use.</p>
+    <div class="card-tags"><span class="card-tag">Git</span><span class="card-tag">Checklist</span><span class="card-tag">Productivity</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$2.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 13. Git and GitHub Power User Toolkit (New Edition) -->
+  <a href="https://ducminh5.gumroad.com/l/qsyhfm" target="_blank" rel="noopener" class="product-card" data-cat="devtools" style="animation-delay: 0.22s">
+    <div class="card-top">
+      <div class="card-icon card-icon-blue">🔀</div>
+      <div class="card-badges"><span class="badge badge-new">New</span></div>
+    </div>
+    <h3 class="card-title">Git & GitHub Power User Toolkit</h3>
+    <p class="card-desc">50 commands, workflows, and patterns to ship faster. Branching strategies, interactive rebase, conflict resolution, GitHub Actions CI/CD, hooks, worktrees, and troubleshooting.</p>
+    <div class="card-tags"><span class="card-tag">Git</span><span class="card-tag">GitHub</span><span class="card-tag">Workflow</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$2.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 13. Frontend Performance Optimization -->
+  <a href="https://ducminh5.gumroad.com/l/moqkg" target="_blank" rel="noopener" class="product-card" data-cat="devtools" style="animation-delay: 0.24s">
+    <div class="card-top">
+      <div class="card-icon card-icon-green">⚡</div>
+      <div class="card-badges"><span class="badge badge-new">New</span></div>
+    </div>
+    <h3 class="card-title">Frontend Performance Optimization</h3>
+    <p class="card-desc">30 patterns to make your web app fast. Critical rendering, code splitting, image optimization, Core Web Vitals, React and Vue-specific patterns, build optimization, and measurement.</p>
+    <div class="card-tags"><span class="card-tag">Performance</span><span class="card-tag">React</span><span class="card-tag">WebDev</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$2.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 14. Python Developer's Interview Guide -->
+  <a href="https://ducminh5.gumroad.com/l/fzdhcu" target="_blank" rel="noopener" class="product-card" data-cat="devtools" style="animation-delay: 0.26s">
+    <div class="card-top">
+      <div class="card-icon card-icon-blue">🐍</div>
+      <div class="card-badges"><span class="badge badge-new">New</span></div>
+    </div>
+    <h3 class="card-title">Python Developer's Interview Guide</h3>
+    <p class="card-desc">150+ questions from fundamentals to system design. Covers GIL, async/await, decorators, OOP, Django, FastAPI, SQLAlchemy, testing, data structures, algorithms, and behavioral questions with STAR method examples.</p>
+    <div class="card-tags"><span class="card-tag">Python</span><span class="card-tag">Interview</span><span class="card-tag">Algorithms</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$4.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 15. React and Next.js Developer's Cheat Sheet -->
+  <a href="https://ducminh5.gumroad.com/l/pitepy" target="_blank" rel="noopener" class="product-card" data-cat="devtools" style="animation-delay: 0.28s">
+    <div class="card-top">
+      <div class="card-icon card-icon-purple">⚛️</div>
+      <div class="card-badges"><span class="badge badge-new">New</span></div>
+    </div>
+    <h3 class="card-title">React &amp; Next.js Developer's Cheat Sheet</h3>
+    <p class="card-desc">120+ patterns, hooks, and best practices. useState, useEffect, useReducer, custom hooks, Zustand, Tailwind, App Router, Server Actions, TypeScript patterns, performance optimization, and architecture patterns.</p>
+    <div class="card-tags"><span class="card-tag">React</span><span class="card-tag">Next.js</span><span class="card-tag">TypeScript</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$4.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+
+  <!-- 16. SQL Interview Questions — 100+ Problems -->
+  <a href="https://ducminh5.gumroad.com/l/eyfdo" target="_blank" rel="noopener" class="product-card" data-cat="devtools" style="animation-delay: 0.3s">
+    <div class="card-top">
+      <div class="card-icon card-icon-cyan">🗃️</div>
+      <div class="card-badges"><span class="badge badge-new">New</span></div>
+    </div>
+    <h3 class="card-title">SQL Interview Questions — 100+ Problems</h3>
+    <p class="card-desc">100+ SQL interview problems with detailed solutions. JOINs, subqueries, CTEs, window functions, query optimization, real-world data scenarios. PostgreSQL &amp; MySQL syntax.</p>
+    <div class="card-tags"><span class="card-tag">SQL</span><span class="card-tag">Database</span><span class="card-tag">Interview</span></div>
+    <div class="card-bottom">
+      <div class="card-price">$3.99+</div>
+      <div class="card-cta">Get It →</div>
+    </div>
+  </a>
+</section>
+
+<!-- ============ BUNDLE CTA ============ -->
+<section class="bundle-section" id="bundle">
+  <div class="bundle-inner">
+    <h2><span class="gradient-text">Get the Entire Collection</span></h2>
+    <p>All 10 prompt packs — 300+ prompts for developers, founders, PMs, freelancers & creators. Pay what you want from $2.99. Instant download, free lifetime updates.</p>
+    <div class="bundle-products">
+      <span class="bundle-product-tag">AI Coding Toolkit</span>
+      <span class="bundle-product-tag">Git Power User</span>
+      <span class="bundle-product-tag">API Collection V1+V2</span>
+      <span class="bundle-product-tag">Docker Commands</span>
+      <span class="bundle-product-tag">VS Code Templates</span>
+      <span class="bundle-product-tag">Prompt Masterclass</span>
+      <span class="bundle-product-tag">330+ Prompt Library</span>
+      <span class="bundle-product-tag">AI Money Guide</span>
+      <span class="bundle-product-tag">Side Hustle Blueprint</span>
+      <span class="bundle-product-tag">Passive Income Guide</span>
+      <span class="bundle-product-tag">+6 More</span>
+    </div>
+    <div class="bundle-price">$79.90</div>
+    <div class="bundle-price-save">Individual value: $96.85 — save $16.95</div>
+    <a href="https://ducminh5.gumroad.com" class="btn-primary" style="position:relative;">Get the Full Bundle →</a>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section class="newsletter-section" id="free">
+  <div class="newsletter-inner">
+    <h2>🎁 Get New Products First + 25% OFF This Month</h2>
+    <p>Join the list — I'll send you new product drops, free templates, and AI maker tips. Use code <strong style="color:var(--accent-primary)">JULY25</strong> for 25% off all paid products this month. No spam, unsubscribe anytime.</p>
+    <form class="newsletter-form" action="https://ducminh5.gumroad.com" method="get">
+      <input type="email" placeholder="your@email.com" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="newsletter-privacy">🔒 No spam. Unsubscribe anytime. Your email is safe.</p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      © 2026 Duc Nguyen · Built with ⚡ and AI
+    </div>
+    <div class="footer-links">
+      <a href="https://ducminh5.gumroad.com" target="_blank" rel="noopener">Gumroad</a>
+      <a href="#products">Products</a>
+      <a href="#free">Free Downloads</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Intersection Observer for staggered card animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.animationPlayState = 'running';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.product-card').forEach(card => {
+  card.style.animationPlayState = 'paused';
+  observer.observe(card);
+});
+
+// Filter pills JS enhancement (works alongside CSS fallback)
+document.querySelectorAll('.filter-radio').forEach(radio => {
+  radio.addEventListener('change', (e) => {
+    document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+    e.target.closest('.filter-pill').classList.add('active');
+  });
+});
+</script>
+
+<!-- IndexNow auto-ping on page load -->
+<script>
+fetch("https://api.indexnow.org/indexnow", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    host: "nguyenminhduc9988.github.io",
+    key: "ducstore2026",
+    urlList: ["https://nguyenminhduc9988.github.io/duc-store/"]
+  })
+}).catch(() => {});
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Duc Nguyen Digital Products",
+  "url": "https://ducminh5.gumroad.com/",
+  "description": "29 digital products — AI prompt packs, dev toolkits, checklists, cheat sheets & templates. Pay what you want from $2.99. July Sale: 25% OFF.",
+  "author": {
+    "@type": "Person",
+    "name": "Duc Nguyen",
+    "url": "https://ducminh5.gumroad.com",
+  },
+  "offers": {
+    "@type": "AggregateOffer",
+    "lowPrice": "0",
+    "highPrice": "9.99",
+    "priceCurrency": "USD",
+    "offerCount": 29
+  }
+}
+</script>
+
+
+<!-- Ko-fi Floating Chat -->
+<script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+<script>
+  kofiWidgetOverlay.draw('theaiproducer', {
+    'type': 'floating-chat',
+    'floating-chat.donateButton.text': 'Support me',
+    'floating-chat.donateButton.background-color': '#00b9fe',
+    'floating-chat.donateButton.text-color': '#fff'
+  });
+</script>
+
+<!-- Ko-fi Support Widget -->
+<script type="text/javascript" src="https://storage.ko-fi.com/cdn/widget/Widget_2.js"></script>
+<script type="text/javascript">kofiwidget2.init("Support me on Ko-fi", "#72a4f2", "Q2V222BH09");kofiwidget2.draw();</script>
+</body>
+</html>
