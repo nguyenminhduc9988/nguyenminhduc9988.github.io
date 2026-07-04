@@ -491,6 +491,77 @@ nav .nav-cta:hover { opacity: 0.85; transform: translateY(-1px); }
 .tag-health { background: rgba(236,72,153,0.1); color: var(--accent3); }
 .tag-hustle { background: rgba(251,191,36,0.1); color: #fbbf24; }
 .tag-prod { background: rgba(34,211,238,0.1); color: #22d3ee; }
+.tag-oss { background: rgba(99,102,241,0.1); color: var(--accent); }
+
+/* OPEN SOURCE GRID */
+.oss-section {
+  padding: 60px 0 80px;
+}
+.oss-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+}
+.oss-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px;
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.25s;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.oss-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.28);
+}
+.oss-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.oss-card-head h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0;
+}
+.oss-card p {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+.oss-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+.oss-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px dashed var(--border);
+  border-radius: 14px;
+  padding: 22px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.25s;
+}
+.oss-more:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
 .tag-store { background: rgba(251,191,36,0.12); color: #fbbf24; border: 1px solid rgba(251,191,36,0.25); }
 
 /* Highlighted store card */
@@ -866,6 +937,7 @@ footer {
     </a>
     <div class="nav-links">
       <a href="#projects">Projects</a>
+      <a href="#opensource">Open Source</a>
       <a href="https://nguyenminhduc9988.github.io/duc-store/">Store</a>
       <a href="#tools">Tools</a>
       <a href="#about">About</a>
@@ -1036,6 +1108,78 @@ footer {
           <h3>Productivity Hacks</h3>
           <p>Deep work techniques, AI productivity tools, Pomodoro method, and time management strategies.</p>
         </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- OPEN SOURCE -->
+<section class="oss-section" id="opensource">
+  <div class="container">
+    <div class="section-title reveal">
+      <div class="label">Open Source</div>
+      <h2>Tools I've published</h2>
+      <p>Small, dependency-free libraries and CLIs for AI agent builders — MIT licensed, free to use and fork.</p>
+    </div>
+    <div class="oss-grid">
+      <a class="oss-card reveal" href="https://github.com/nguyenminhduc9988/dev-prompts" target="_blank" rel="noopener">
+        <div class="oss-card-head">
+          <span class="project-tag tag-oss">CLI</span>
+        </div>
+        <h3>dev-prompts</h3>
+        <p>120+ copy-paste AI prompts for software engineers — code review, debugging, testing, refactoring. Dependency-free CLI.</p>
+        <div class="oss-card-meta">⭐ MIT · Python</div>
+      </a>
+      <a class="oss-card reveal" href="https://github.com/nguyenminhduc9988/mcp-wrap" target="_blank" rel="noopener">
+        <div class="oss-card-head">
+          <span class="project-tag tag-oss">MCP</span>
+        </div>
+        <h3>mcp-wrap</h3>
+        <p>Wrap any REST API into a Model Context Protocol (MCP) server in minutes — no boilerplate.</p>
+        <div class="oss-card-meta">⭐ MIT · Python</div>
+      </a>
+      <a class="oss-card reveal" href="https://github.com/nguyenminhduc9988/mnemokit" target="_blank" rel="noopener">
+        <div class="oss-card-head">
+          <span class="project-tag tag-oss">Agents</span>
+        </div>
+        <h3>mnemokit</h3>
+        <p>Lightweight persistent memory for AI agents and CLI tools — SQLite + FTS5 full-text search, zero dependencies.</p>
+        <div class="oss-card-meta">⭐ MIT · Python</div>
+      </a>
+      <a class="oss-card reveal" href="https://github.com/nguyenminhduc9988/prompt-bench" target="_blank" rel="noopener">
+        <div class="oss-card-head">
+          <span class="project-tag tag-oss">LLM Eval</span>
+        </div>
+        <h3>prompt-bench</h3>
+        <p>Prompt quality scorer and A/B tester for LLM prompts. Scores on 12 dimensions and flags anti-patterns.</p>
+        <div class="oss-card-meta">⭐ MIT · Python</div>
+      </a>
+      <a class="oss-card reveal" href="https://github.com/nguyenminhduc9988/agent-loop-lite" target="_blank" rel="noopener">
+        <div class="oss-card-head">
+          <span class="project-tag tag-oss">Agents</span>
+        </div>
+        <h3>agent-loop-lite</h3>
+        <p>Simplified Plan-Act-Observe loop for building AI agents — a minimal reference implementation.</p>
+        <div class="oss-card-meta">⭐ MIT · Python</div>
+      </a>
+      <a class="oss-card reveal" href="https://github.com/nguyenminhduc9988/hermes-tool-guard" target="_blank" rel="noopener">
+        <div class="oss-card-head">
+          <span class="project-tag tag-oss">Security</span>
+        </div>
+        <h3>hermes-tool-guard</h3>
+        <p>Rate-limiting and safety middleware for LLM tool calls — validates inputs, blocks dangerous patterns.</p>
+        <div class="oss-card-meta">⭐ MIT · Python</div>
+      </a>
+      <a class="oss-card reveal" href="https://github.com/nguyenminhduc9988/context-window" target="_blank" rel="noopener">
+        <div class="oss-card-head">
+          <span class="project-tag tag-oss">LLM</span>
+        </div>
+        <h3>context-window</h3>
+        <p>Smart context window manager for LLM conversations — compresses older messages while preserving key info.</p>
+        <div class="oss-card-meta">⭐ MIT · Python</div>
+      </a>
+      <a class="oss-more reveal" href="https://github.com/nguyenminhduc9988?tab=repositories" target="_blank" rel="noopener">
+        + 9 more open-source tools on GitHub →
       </a>
     </div>
   </div>
