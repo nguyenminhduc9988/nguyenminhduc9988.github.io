@@ -395,6 +395,160 @@ nav .nav-cta:hover { opacity: 0.85; transform: translateY(-1px); }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* BESTSELLERS */
+.bestsellers-section {
+  padding: 0 0 40px;
+}
+.bestsellers-section .section-title {
+  margin-bottom: 36px;
+}
+.bestsellers-section .section-title .label {
+  color: #fbbf24;
+}
+.bestsellers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+}
+.bestseller-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.3s;
+}
+.bestseller-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 17px;
+  padding: 1px;
+  background: linear-gradient(135deg, transparent, transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  z-index: 1;
+}
+.bestseller-card:hover::before {
+  opacity: 1;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706);
+}
+.bestseller-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 60px rgba(251,191,36,0.08);
+}
+.bestseller-thumb {
+  position: relative;
+  overflow: hidden;
+}
+.bestseller-thumb img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 40/21;
+  object-fit: cover;
+  display: block;
+  background: var(--surface);
+  transition: transform 0.4s;
+}
+.bestseller-card:hover .bestseller-thumb img {
+  transform: scale(1.04);
+}
+.bestseller-badge {
+  position: absolute;
+  top: 10px; left: 10px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 100px;
+  background: linear-gradient(90deg, #fbbf24, #f59e0b);
+  color: #0a0a0f;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+}
+.bestseller-body {
+  padding: 16px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+.bestseller-body h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.45;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+.bestseller-meta {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.bestseller-price {
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #fbbf24;
+}
+.bestseller-price span {
+  font-family: var(--font);
+  font-size: 0.66rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-left: 4px;
+}
+.bestseller-cta {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.25s, transform 0.25s;
+}
+.bestseller-card:hover .bestseller-cta {
+  color: #fbbf24;
+  transform: translateX(2px);
+}
+.bestsellers-footer {
+  text-align: center;
+  margin-top: 28px;
+}
+.bestsellers-footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.25s;
+}
+.bestsellers-footer a:hover {
+  border-color: rgba(251,191,36,0.4);
+  color: #fbbf24;
+  transform: translateY(-2px);
+}
+
 /* SECTION TITLES */
 .section-title {
   text-align: center;
@@ -1007,52 +1161,73 @@ footer {
 </section>
 
 <!-- BESTSELLERS (proven sellers — funnel owned-site traffic to the winners) -->
-<section style="padding:2.5rem 1.5rem .5rem;max-width:1200px;margin:0 auto">
-  <div style="display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap;margin-bottom:1.2rem">
-    <h2 style="margin:0;font-size:1.4rem;font-weight:800">&#11088; Most-Loved Products</h2>
-    <span style="font-size:.85rem;opacity:.65">&mdash; reader favourites, pay what you want</span>
-  </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px">
-    <a href="https://ducminh5.gumroad.com/l/zoply" target="_blank" rel="noopener" style="display:flex;flex-direction:column;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .25s,border-color .25s" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(245,158,11,.4)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,.08)'">
-      <div style="position:relative">
-        <img src="https://public-files.gumroad.com/kpioq58g03c0qtzab8hbgayy91bi" alt="15 ChatGPT Prompts That Automate Your Morning Routine" style="width:100%;height:auto;display:block" loading="lazy" decoding="async" width="600" height="315">
-        <span style="position:absolute;top:8px;left:8px;font-size:.6rem;font-weight:700;padding:3px 8px;border-radius:999px;background:linear-gradient(90deg,#f59e0b,#ef4444);color:#0a0a0f">#1 SELLER</span>
-      </div>
-      <div style="padding:.7rem">
-        <div style="font-size:.8rem;font-weight:600;line-height:1.3;margin-bottom:.3rem">15 Morning-Routine ChatGPT Prompts</div>
-        <div style="font-size:.76rem;color:#f59e0b;font-weight:700">$2.99+ <span style="opacity:.6;font-weight:400">PWYW</span></div>
-      </div>
-    </a>
-    <a href="https://ducminh5.gumroad.com/l/hbszwt" target="_blank" rel="noopener" style="display:flex;flex-direction:column;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .25s,border-color .25s" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(245,158,11,.4)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,.08)'">
-      <div style="position:relative">
-        <img src="https://public-files.gumroad.com/yqo44nh30efpnaw2nrhsd4ol39j8" alt="20 ChatGPT Prompts That Automate Your Workday" style="width:100%;height:auto;display:block" loading="lazy" decoding="async" width="600" height="315">
-        <span style="position:absolute;top:8px;left:8px;font-size:.6rem;font-weight:700;padding:3px 8px;border-radius:999px;background:linear-gradient(90deg,#f59e0b,#ef4444);color:#0a0a0f">BESTSELLER</span>
-      </div>
-      <div style="padding:.7rem">
-        <div style="font-size:.8rem;font-weight:600;line-height:1.3;margin-bottom:.3rem">20 Workday ChatGPT Prompts</div>
-        <div style="font-size:.76rem;color:#f59e0b;font-weight:700">$2.99+ <span style="opacity:.6;font-weight:400">PWYW</span></div>
-      </div>
-    </a>
-    <a href="https://ducminh5.gumroad.com/l/wqyawf" target="_blank" rel="noopener" style="display:flex;flex-direction:column;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .25s,border-color .25s" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(245,158,11,.4)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,.08)'">
-      <div style="position:relative">
-        <img src="https://public-files.gumroad.com/pp1y7wymnspg4m3ezzdvz4kb9sn5" alt="10 AI Prompts That Save Me 5 Hours Every Week" style="width:100%;height:auto;display:block" loading="lazy" decoding="async" width="600" height="315">
-        <span style="position:absolute;top:8px;left:8px;font-size:.6rem;font-weight:700;padding:3px 8px;border-radius:999px;background:linear-gradient(90deg,#f59e0b,#ef4444);color:#0a0a0f">BESTSELLER</span>
-      </div>
-      <div style="padding:.7rem">
-        <div style="font-size:.8rem;font-weight:600;line-height:1.3;margin-bottom:.3rem">10 Prompts That Save 5 Hours/Week</div>
-        <div style="font-size:.76rem;color:#f59e0b;font-weight:700">$2.99+ <span style="opacity:.6;font-weight:400">PWYW</span></div>
-      </div>
-    </a>
-    <a href="https://ducminh5.gumroad.com/l/pbmmnz" target="_blank" rel="noopener" style="display:flex;flex-direction:column;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .25s,border-color .25s" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(245,158,11,.4)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,.08)'">
-      <div style="position:relative">
-        <img src="https://public-files.gumroad.com/l713j8ugwvudixf16d9ab93mqj36" alt="The Weekly Reset Checklist — 40 Questions" style="width:100%;height:auto;display:block" loading="lazy" decoding="async" width="600" height="315">
-        <span style="position:absolute;top:8px;left:8px;font-size:.6rem;font-weight:700;padding:3px 8px;border-radius:999px;background:linear-gradient(90deg,#f59e0b,#ef4444);color:#0a0a0f">BESTSELLER</span>
-      </div>
-      <div style="padding:.7rem">
-        <div style="font-size:.8rem;font-weight:600;line-height:1.3;margin-bottom:.3rem">The Weekly Reset Checklist (40 Qs)</div>
-        <div style="font-size:.76rem;color:#f59e0b;font-weight:700">$2.99</div>
-      </div>
-    </a>
+<section class="bestsellers-section">
+  <div class="container">
+    <div class="section-title reveal">
+      <div class="label">&#11088; Reader Favourites</div>
+      <h2>Most-Loved Products</h2>
+      <p>The bestsellers readers keep coming back for — pay what you want, instant download.</p>
+    </div>
+    <div class="bestsellers-grid reveal">
+      <a class="bestseller-card" href="https://ducminh5.gumroad.com/l/zoply" target="_blank" rel="noopener">
+        <div class="bestseller-thumb">
+          <img src="https://public-files.gumroad.com/kpioq58g03c0qtzab8hbgayy91bi" alt="15 ChatGPT Prompts That Automate Your Morning Routine" loading="lazy" decoding="async" width="600" height="315">
+          <span class="bestseller-badge">#1 Seller</span>
+        </div>
+        <div class="bestseller-body">
+          <h3>15 Morning-Routine ChatGPT Prompts</h3>
+          <div class="bestseller-meta">
+            <span class="bestseller-price">$2.99+ <span>PWYW</span></span>
+            <span class="bestseller-cta">Get it &rarr;</span>
+          </div>
+        </div>
+      </a>
+      <a class="bestseller-card" href="https://ducminh5.gumroad.com/l/hbszwt" target="_blank" rel="noopener">
+        <div class="bestseller-thumb">
+          <img src="https://public-files.gumroad.com/yqo44nh30efpnaw2nrhsd4ol39j8" alt="20 ChatGPT Prompts That Automate Your Workday" loading="lazy" decoding="async" width="600" height="315">
+          <span class="bestseller-badge">Bestseller</span>
+        </div>
+        <div class="bestseller-body">
+          <h3>20 Workday ChatGPT Prompts</h3>
+          <div class="bestseller-meta">
+            <span class="bestseller-price">$2.99+ <span>PWYW</span></span>
+            <span class="bestseller-cta">Get it &rarr;</span>
+          </div>
+        </div>
+      </a>
+      <a class="bestseller-card" href="https://ducminh5.gumroad.com/l/wqyawf" target="_blank" rel="noopener">
+        <div class="bestseller-thumb">
+          <img src="https://public-files.gumroad.com/pp1y7wymnspg4m3ezzdvz4kb9sn5" alt="10 AI Prompts That Save Me 5 Hours Every Week" loading="lazy" decoding="async" width="600" height="315">
+          <span class="bestseller-badge">Bestseller</span>
+        </div>
+        <div class="bestseller-body">
+          <h3>10 Prompts That Save 5 Hours/Week</h3>
+          <div class="bestseller-meta">
+            <span class="bestseller-price">$2.99+ <span>PWYW</span></span>
+            <span class="bestseller-cta">Get it &rarr;</span>
+          </div>
+        </div>
+      </a>
+      <a class="bestseller-card" href="https://ducminh5.gumroad.com/l/pbmmnz" target="_blank" rel="noopener">
+        <div class="bestseller-thumb">
+          <img src="https://public-files.gumroad.com/l713j8ugwvudixf16d9ab93mqj36" alt="The Weekly Reset Checklist — 40 Questions" loading="lazy" decoding="async" width="600" height="315">
+          <span class="bestseller-badge">Bestseller</span>
+        </div>
+        <div class="bestseller-body">
+          <h3>The Weekly Reset Checklist (40 Qs)</h3>
+          <div class="bestseller-meta">
+            <span class="bestseller-price">$2.99</span>
+            <span class="bestseller-cta">Get it &rarr;</span>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="bestsellers-footer reveal">
+      <a href="https://nguyenminhduc9988.github.io/duc-store/">
+        Browse all 19 products
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M13 8l-4-4M13 8l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
   </div>
 </section>
 
