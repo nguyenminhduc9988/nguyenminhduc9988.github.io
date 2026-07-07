@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Audit Your Browser Tools for Privacy and Security</title>
+<meta name="description" content="A practical checklist for vetting any online tool before you trust it with sensitive data — what to look for in the Network tab, what tracking looks like, and the red flags.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://nguyenminhduc9988.github.io/blog/audit-browser-tools-privacy-security.html">
+<meta property="og:title" content="How to Audit Your Browser Tools for Privacy and Security">
+<meta property="og:description" content="A practical checklist for vetting any online tool before you trust it with sensitive data.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://nguyenminhduc9988.github.io/blog/audit-browser-tools-privacy-security.html">
+<meta property="og:site_name" content="Duc Nguyen">
+<meta property="og:image" content="https://nguyenminhduc9988.github.io/og-image.png">
+<meta property="article:published_time" content="2026-07-07">
+<meta property="article:author" content="Duc Nguyen">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Audit Your Browser Tools for Privacy and Security">
+<meta name="twitter:description" content="A practical checklist for vetting any online tool before you trust it with sensitive data.">
+<meta name="twitter:image" content="https://nguyenminhduc9988.github.io/og-image.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236366f1'/%3E%3Cstop offset='1' stop-color='%23ec4899'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='%230a0a0f'/%3E%3Ctext x='50' y='70' font-family='Arial' font-size='50' font-weight='bold' text-anchor='middle' fill='url(%23g)'%3ED%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#050508;--bg-card:#0e0e12;--text:#e8e8f0;--text-muted:#888;--purple:#6366f1;--pink:#ec4899;--border:#1a1a24;--radius:10px;--mono:'JetBrains Mono',monospace}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.8}
+a{color:var(--purple);text-decoration:none}
+a:hover{text-decoration:underline}
+.nav{position:sticky;top:0;z-index:100;background:rgba(5,5,8,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 20px}
+.nav-inner{max-width:760px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-logo{font-size:1.1rem;font-weight:700;color:var(--text)}
+.nav-links{display:flex;gap:18px;flex-wrap:wrap}
+.nav-links a{color:var(--text-muted);font-size:.85rem}
+.nav-links a:hover{color:var(--text);text-decoration:none}
+.container{max-width:760px;margin:0 auto;padding:48px 20px 80px}
+.back-link{display:inline-block;font-size:.85rem;color:var(--text-muted);margin-bottom:24px}
+.back-link:hover{color:var(--purple)}
+article h1{font-size:2rem;font-weight:800;margin-bottom:12px;letter-spacing:-.5px;line-height:1.25}
+.post-meta{display:flex;align-items:center;gap:12px;margin-bottom:32px;font-size:.82rem;color:var(--text-muted)}
+.post-tag{background:rgba(99,102,241,.12);color:var(--purple);padding:3px 10px;border-radius:100px;font-size:.72rem;font-weight:600}
+article h2{font-size:1.3rem;font-weight:700;margin:36px 0 12px;color:var(--text);letter-spacing:-.2px}
+article h3{font-size:1.05rem;font-weight:600;margin:24px 0 8px;color:var(--text)}
+article p{color:var(--text-muted);font-size:.97rem;margin-bottom:16px}
+article ul{margin:0 0 18px 22px}
+article li{margin-bottom:8px;color:var(--text-muted);font-size:.97rem}
+article li strong{color:var(--text)}
+article code{font-family:var(--mono);background:var(--bg-card);border:1px solid var(--border);padding:2px 6px;border-radius:5px;font-size:.85rem;color:var(--pink)}
+article pre{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;overflow-x:auto;margin:0 0 18px}
+article pre code{background:none;border:none;padding:0;color:#c8c8d8;font-size:.85rem;line-height:1.6}
+.callout{background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--purple);border-radius:var(--radius);padding:16px 20px;margin:24px 0}
+.callout strong{color:var(--text)}
+.article-footer{margin-top:48px;padding-top:28px;border-top:1px solid var(--border);display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+.article-footer a{color:var(--purple);font-weight:600;font-size:.9rem}
+.footer{border-top:1px solid var(--border);padding:28px 20px;text-align:center;display:flex;gap:22px;justify-content:center;flex-wrap:wrap}
+.footer a{color:var(--text-muted);font-size:.85rem}
+.footer a:hover{color:var(--text)}
+@media(max-width:640px){.container{padding:32px 16px 60px}article h1{font-size:1.55rem}.nav-links{gap:12px}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a href="/" class="nav-logo">Duc Nguyen</a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/about.html">About</a>
+    <a href="/blog/">Blog</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/privacy-policy.html">Privacy</a>
+    <a href="/terms-of-service.html">Terms</a>
+  </div>
+</div></nav>
+
+<div class="container">
+  <a href="/blog/" class="back-link">← Back to Blog</a>
+  <article>
+    <h1>How to Audit Your Browser Tools for Privacy and Security</h1>
+    <div class="post-meta"><span class="post-tag">Security</span><span>July 7, 2026 · By Duc Nguyen · 6 min read</span></div>
+
+    <p>Every day, developers paste sensitive data into online tools without a second thought — a production API response into a formatter, a private key into a converter, a customer export into a validator. Most of the time nothing bad happens. Sometimes it does, and the cost of that "sometimes" is high enough that it's worth knowing how to vet a tool before you trust it. The good news is that auditing a web tool takes about two minutes, requires no special expertise, and works on any tool on the internet. Here's the checklist I use.</p>
+
+    <h2>The fifteen-second test: watch the Network tab</h2>
+    <p>The single most revealing thing you can do with any online tool is open your browser's developer tools and watch what leaves the page. The Network tab is a live log of every request the page makes. If a tool claims to be "private" or "client-side" but quietly ships your input to a server, this is where you'll catch it.</p>
+    <p>Here's the procedure, step by step:</p>
+    <ul>
+      <li><strong>Open the tool, then open DevTools</strong> (press F12, or right-click and choose Inspect). Switch to the Network tab.</li>
+      <li><strong>Tick "Preserve log."</strong> This stops requests from being cleared when the page navigates or reloads, so you don't miss anything.</li>
+      <li><strong>Clear the log</strong> (the circle-with-a-line icon) so you start fresh after the page has loaded.</li>
+      <li><strong>Enter a clearly fake, unique test input</strong> — something like <code>ZZZ_TEST_MARKER_9988</code>. Use the tool as you normally would: paste, click, generate.</li>
+      <li><strong>Watch the Network tab.</strong> If any request appears whose payload contains your test marker, the tool is transmitting your input to a server.</li>
+    </ul>
+    <p>That's the whole test. A genuinely client-side tool will show only the background requests it always makes — analytics, ad scripts, font loading — and none of them will contain your input. A server-side tool will show a request carrying your test string, and you've just learned everything you need to know.</p>
+
+    <div class="callout"><strong>Why a unique marker?</strong> Using a distinctive string makes it obvious whether it reappears in a network request. <code>"test"</code> might appear in legitimate background traffic; <code>ZZZ_TEST_MARKER_9988</code> won't appear anywhere unless the tool sent it.</div>
+
+    <h2>Reading the request details</h2>
+    <p>When you click on a request in the Network tab, you can inspect its details. A few things tell you what's really happening:</p>
+    <ul>
+      <li><strong>The request method:</strong> <code>GET</code> requests fetching assets are normal. <code>POST</code>, <code>PUT</code>, or <code>PATCH</code> requests are the ones that typically carry your input as a payload — click into the "Payload" or "Request" tab to see what's being sent.</li>
+      <li><strong>The destination domain:</strong> is the request going to the site you're on, or to a third party? A request to an unknown analytics or "processing" domain carrying your data is a serious red flag.</li>
+      <li><strong>The payload contents:</strong> if your test marker appears in the request body, the tool is leaking your input. No ambiguity.</li>
+    </ul>
+
+    <h2>Red flags beyond the network</h2>
+    <p>Network behavior is the most decisive signal, but it's not the only one. A few other indicators that a tool deserves extra scrutiny:</p>
+
+    <h3>Heavy tracking scripts</h3>
+    <p>Even if a tool is client-side, the page itself can be loaded with trackers — analytics, advertising pixels, fingerprinting scripts. None of these see the contents of your computation, but they do build a profile of your visit. If a simple utility page is running twenty tracking scripts, the operator's priorities are telling you something.</p>
+
+    <h3>No source code and no explanation</h3>
+    <p>A trustworthy tool usually explains how it works, and ideally lets you read the code. A page that demands you trust it on faith, with no technical detail and no link to its source, gives you no way to verify its claims. The strongest tools publish their code — even minified, the fact that it's there to inspect matters.</p>
+
+    <h3>Requests to unexpected domains on input</h3>
+    <p>The cleanest tools load everything they need once and then sit quiet. If pasting input triggers a flurry of requests to domains you don't recognize, treat that as suspicious. A client-side tool should not need to phone home when you type.</p>
+
+    <h3>HTTPS is necessary but not sufficient</h3>
+    <p>A site without HTTPS is an immediate no — never paste anything sensitive into a page served over plain HTTP. But the presence of HTTPS (the lock icon) only means the connection is encrypted in transit. It tells you nothing about what the server does with your data once it arrives. I covered this distinction in <a href="/blog/why-client-side-tools-protect-your-privacy.html">why client-side tools protect your privacy</a>: encryption in transit is not privacy at rest.</p>
+
+    <h2>The trust hierarchy</h2>
+    <p>After running these checks, tools fall into a rough hierarchy. Knowing where a tool sits helps you decide what data it's safe to feed it:</p>
+    <ul>
+      <li><strong>Highest trust: client-side, source available.</strong> The computation happens in your browser, and you can read the code. Examples include the tools on this site, which are open and verifiable in the Network tab.</li>
+      <li><strong>Good trust: client-side, no obvious leaks.</strong> The Network tab shows no data leaving, even if the source isn't published. Fine for most inputs, with mild residual caution.</li>
+      <li><strong>Conditional trust: server-side but reputable.</strong> The tool processes data on its server, but the operator has a clear privacy policy and a reputation to protect. Acceptable for non-sensitive data; never use for secrets, keys, or private customer data.</li>
+      <li><strong>No trust: server-side, opaque, or leaking.</strong> The tool transmits your input and offers no transparency. Don't feed it anything you wouldn't publish publicly.</li>
+    </ul>
+
+    <h2>What I build against, and why</h2>
+    <p>This checklist isn't theoretical for me — it's the standard I hold my own tools to, and the reason they're built the way they are. When I ship a JSON formatter or a hash generator, it has to pass its own audit: no network request carrying user input, ever, regardless of what's pasted in. That's only achievable because the tools are architecturally client-side; there's no server for the data to reach even if something went wrong. You can run the fifteen-second test on any tool on this site and confirm it for yourself.</p>
+    <p>The point of publishing this checklist isn't to steer you toward my tools specifically. It's to give you a durable skill: the ability to evaluate any online utility, anywhere, in under two minutes. The web is full of convenient tools, and many of them are perfectly safe. A handful are not. Knowing how to tell the difference is the difference between convenience that's genuinely free and convenience that quietly costs you something.</p>
+
+    <div class="callout"><strong>The bottom line:</strong> a tool's privacy is a property of its architecture, not its marketing. Don't trust a "we respect your privacy" badge — trust the Network tab. It never lies, and it takes less time to read than the privacy policy you were going to skim instead.</div>
+
+    <h2>A quick pre-flight routine</h2>
+    <p>If you handle sensitive data regularly, make this a habit before pasting into any unfamiliar tool: open DevTools, watch the Network tab, paste a test marker. Two minutes, every time. Once you've done it a few times it becomes automatic, and you'll develop a shortlist of tools you've already vetted and trust. The ones that don't pass, you'll simply stop using — and that's a quiet, significant improvement to your security posture that costs you almost nothing.</p>
+
+    <div class="article-footer">
+      <a href="/blog/">← All articles</a>
+      <a href="/">← Back to home</a>
+    </div>
+  </article>
+</div>
+
+<div class="footer">
+  <a href="/">Home</a>
+  <a href="/about.html">About</a>
+  <a href="/blog/">Blog</a>
+  <a href="/contact.html">Contact</a>
+  <a href="/privacy-policy.html">Privacy</a>
+  <a href="/terms-of-service.html">Terms</a>
+  <a href="https://github.com/nguyenminhduc9988" target="_blank" rel="noopener">GitHub</a>
+</div>
+</body>
+</html>

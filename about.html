@@ -13,49 +13,56 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About — Duc Nguyen</title>
-<meta name="description" content="About Duc Nguyen — a developer in Singapore building free client-side tools, in-depth guides, and practical digital products. Learn the story behind the projects.">
+<meta name="description" content="About Duc Nguyen — a self-taught developer in Singapore building free client-side tools, in-depth guides, and practical digital products. Learn the story, mission, and engineering principles behind the projects.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://nguyenminhduc9988.github.io/about">
+<link rel="canonical" href="https://nguyenminhduc9988.github.io/about.html">
 <meta property="og:title" content="About — Duc Nguyen">
-<meta property="og:description" content="A developer in Singapore building free client-side tools, guides, and digital products.">
+<meta property="og:description" content="A self-taught developer in Singapore building free client-side tools, zero-dependency libraries, and digital products.">
 <meta property="og:type" content="profile">
-<meta property="og:url" content="https://nguyenminhduc9988.github.io/about">
+<meta property="og:url" content="https://nguyenminhduc9988.github.io/about.html">
 <meta property="og:site_name" content="Duc Nguyen">
 <meta property="og:image" content="https://nguyenminhduc9988.github.io/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About — Duc Nguyen">
+<meta name="twitter:description" content="A developer in Singapore building free client-side tools, guides, and digital products.">
+<meta name="twitter:image" content="https://nguyenminhduc9988.github.io/og-image.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236366f1'/%3E%3Cstop offset='1' stop-color='%23ec4899'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='%230a0a0f'/%3E%3Ctext x='50' y='70' font-family='Arial' font-size='50' font-weight='bold' text-anchor='middle' fill='url(%23g)'%3ED%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#050508;--bg-card:#0e0e12;--text:#e8e8f0;--text-muted:#888;--purple:#6366f1;--pink:#ec4899;--border:#1a1a24;--radius:10px}
-body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+:root{--bg:#050508;--bg-card:#0e0e12;--text:#e8e8f0;--text-muted:#888;--purple:#6366f1;--pink:#ec4899;--border:#1a1a24;--radius:10px;--mono:'JetBrains Mono',monospace}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.75}
 a{color:var(--purple);text-decoration:none}
 a:hover{text-decoration:underline}
-.nav{position:sticky;top:0;z-index:100;background:rgba(5,5,8,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 20px}
+.nav{position:sticky;top:0;z-index:100;background:rgba(5,5,8,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 20px}
 .nav-inner{max-width:800px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
 .nav-logo{font-size:1.1rem;font-weight:700;color:var(--text)}
-.nav-links{display:flex;gap:20px}
+.nav-links{display:flex;gap:20px;flex-wrap:wrap}
 .nav-links a{color:var(--text-muted);font-size:.85rem}
 .nav-links a:hover{color:var(--text);text-decoration:none}
-.container{max-width:800px;margin:0 auto;padding:40px 20px 80px}
-.container h1{font-size:2rem;font-weight:800;margin-bottom:8px}
-.updated{color:var(--text-muted);font-size:.85rem;margin-bottom:32px}
-h2{font-size:1.2rem;font-weight:700;margin:32px 0 12px;color:var(--text)}
-h3{font-size:1rem;font-weight:600;margin:20px 0 8px;color:var(--text)}
-p{color:var(--text-muted);font-size:.92rem;margin-bottom:12px}
-ul{margin:0 0 16px 20px}
-li{margin-bottom:6px}
+.container{max-width:800px;margin:0 auto;padding:48px 20px 80px}
+.container h1{font-size:2.2rem;font-weight:800;margin-bottom:8px;letter-spacing:-.5px}
+.updated{color:var(--text-muted);font-size:.85rem;margin-bottom:36px}
+.lead{color:var(--text);font-size:1.05rem;font-weight:400;margin-bottom:24px}
+h2{font-size:1.35rem;font-weight:700;margin:40px 0 14px;color:var(--text);letter-spacing:-.3px}
+h3{font-size:1.05rem;font-weight:600;margin:24px 0 8px;color:var(--text)}
+p{color:var(--text-muted);font-size:.95rem;margin-bottom:14px}
+ul{margin:0 0 16px 22px}
+li{margin-bottom:8px;color:var(--text-muted);font-size:.95rem}
 li strong{color:var(--text)}
-.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:24px 0}
-.stat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;text-align:center}
-.stat-card .num{font-size:1.6rem;font-weight:800;color:var(--purple)}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:28px 0}
+.stat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center}
+.stat-card .num{font-size:1.7rem;font-weight:800;color:var(--purple)}
 .stat-card .label{font-size:.78rem;color:var(--text-muted);margin-top:4px}
-.quote{border-left:3px solid var(--purple);padding:8px 0 8px 18px;margin:24px 0;color:var(--text);font-style:italic}
+.quote{border-left:3px solid var(--purple);padding:10px 0 10px 20px;margin:28px 0;color:var(--text);font-style:italic;font-size:1.02rem}
+.callout{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:18px 22px;margin:24px 0}
+.callout strong{color:var(--text)}
 .footer{border-top:1px solid var(--border);padding:28px 20px;text-align:center;display:flex;gap:22px;justify-content:center;flex-wrap:wrap}
 .footer a{color:var(--text-muted);font-size:.85rem}
 .footer a:hover{color:var(--text)}
+@media(max-width:640px){.container{padding:32px 16px 60px}.container h1{font-size:1.7rem}.nav-links{gap:14px}}
 </style>
 </head>
 <body>
@@ -63,64 +70,94 @@ li strong{color:var(--text)}
   <a href="/" class="nav-logo">Duc Nguyen</a>
   <div class="nav-links">
     <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/contact">Contact</a>
-    <a href="/privacy-policy">Privacy</a>
-    <a href="/terms-of-service">Terms</a>
+    <a href="/about.html">About</a>
+    <a href="/blog/">Blog</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/privacy-policy.html">Privacy</a>
+    <a href="/terms-of-service.html">Terms</a>
   </div>
 </div></nav>
 
 <div class="container">
   <h1>About Me</h1>
-  <p class="updated">Developer · Builder · Based in Singapore</p>
+  <p class="updated">Self-taught developer · Builder of free client-side tools · Based in Singapore</p>
 
-  <p>Hi, I'm <strong>Duc Nguyen</strong> — a software developer who builds practical tools and writes detailed technical guides. Everything I publish here is created to be genuinely useful: the tools run entirely in your browser (so your data never leaves your device), the guides are written from real experience, and the digital products are things I use myself.</p>
+  <p class="lead">Hi, I'm <strong>Duc Nguyen</strong> — a software developer in Singapore who builds practical, privacy-respecting tools and writes detailed technical guides. Everything published on this site is created to be genuinely useful: the tools run entirely in your browser, the guides come from real debugging and research, and the digital products are things I built and use myself.</p>
 
   <div class="stat-grid">
     <div class="stat-card"><div class="num">67+</div><div class="label">Free Tools</div></div>
     <div class="stat-card"><div class="num">96+</div><div class="label">Articles</div></div>
     <div class="stat-card"><div class="num">8</div><div class="label">Sites</div></div>
+    <div class="stat-card"><div class="num">36</div><div class="label">Products</div></div>
     <div class="stat-card"><div class="num">100%</div><div class="label">Client-Side</div></div>
   </div>
 
-  <h2>What I Build</h2>
-  <p>I focus on a few principles that shape every project:</p>
-  <ul>
-    <li><strong>Privacy by default.</strong> My online tools are 100% client-side. No data is sent to a server, no tracking of what you type, no sign-up required. What you compute stays on your machine.</li>
-    <li><strong>Zero dependencies where possible.</strong> My open-source libraries use only the Python standard library or browser-native APIs. This keeps them fast, secure, and easy to audit.</li>
-    <li><strong>Depth over volume.</strong> I'd rather write one thorough guide that solves a problem completely than ten shallow ones. The article archive reflects real debugging and research, not generated filler.</li>
-  </ul>
+  <h2>How I Got Here</h2>
+  <p>I'm a self-taught developer. I didn't come up through a formal computer science program — I learned by building things I needed and couldn't find, by reading source code written by people better than me, and by fixing the same stubborn bug at 2 a.m. enough times that it eventually taught me something. That path shaped how I work today: I respect craft over credentials, working software over presentations, and a small tool that solves one problem completely over a sprawling platform that solves none of them well.</p>
+  <p>Before focusing on this site full-time, I spent years writing automation, building internal developer tooling, and shipping the kind of unglamorous plumbing that makes other people's work faster. That background is why so much of what I build is developer-facing: formatters, converters, encoders, generators, and small utilities that take a tedious manual step and remove it. I've felt the friction of a missing tool often enough to know exactly what a good one should do.</p>
+  <p>I'm based in Singapore (UTC+8), and I run this entire operation as a solo builder — design, development, writing, testing, and support. There's no team and no agency behind it, which is exactly how I keep the quality bar where I want it.</p>
 
-  <h2>The Projects</h2>
-  <p>This site is a hub that connects several focused projects, each maintained independently:</p>
-  <ul>
-    <li><strong>Free Tools Hub</strong> — a growing collection of browser-based utilities: JSON formatter, Base64, password generator, QR maker, and more.</li>
-    <li><strong>Crypto Brief</strong> — clear, jargon-free explainers of cryptocurrency and blockchain concepts.</li>
-    <li><strong>Finance Daily</strong> — practical personal finance and money-management guides.</li>
-    <li><strong>Health Today</strong> — evidence-based health and wellness information.</li>
-    <li><strong>Productivity Hacks</strong> — workflows and systems for getting focused work done.</li>
-    <li><strong>AI Tool Hub</strong> — curated AI tools and how-to guides for using them well.</li>
-    <li><strong>Duc Store</strong> — my digital products (ebooks, templates, developer assets).</li>
-  </ul>
+  <h2>The Mission</h2>
+  <p>My work is built on a small set of principles that I treat as non-negotiable. They're the reason the tools behave the way they do, and the reason I'd rather ship nothing than ship something that quietly sells out the people using it.</p>
+
+  <h3>Privacy by default</h3>
+  <p>Every tool I publish is 100% client-side. The code runs in your browser using JavaScript and standard Web APIs; nothing you type, paste, or upload is ever transmitted to a server I control. When you paste a JSON document into my formatter, it is parsed, pretty-printed, and displayed on your device — it never touches my infrastructure, because there is no backend to touch. This isn't a marketing line. It's an architectural decision baked into every tool from the first line of code.</p>
+
+  <h3>Zero dependencies where possible</h3>
+  <p>My open-source libraries use only the Python standard library or browser-native APIs — no transitive dependency tree of hundreds of packages I can't read. Fewer dependencies means a smaller attack surface, faster installs, fewer breaking changes, and code that anyone can audit in an afternoon. I'll write thirty lines of standard-library code before I pull in a dependency for the same job.</p>
+
+  <h3>Depth over volume</h3>
+  <p>I'd rather publish one thorough guide that solves a problem completely than ten shallow ones that each leave the reader stuck. When I write about JSON parsing or client-side encryption, the article reflects real debugging sessions — the actual errors I hit, the trade-offs I weighed, the benchmarks I ran. There is no AI-generated filler on this site, and there never will be. Every sentence is something I either verified, measured, or learned the hard way.</p>
+
+  <h3>Free forever, private forever</h3>
+  <p>The tools are free, and they stay free. No paywalls, no sign-ups, no "premium tier" that gates the useful features behind a credit card. The digital products in the store fund the work, but they never gate the tools.</p>
 
   <div class="quote">"Build the tool you wish existed — then make it free, private, and fast."</div>
 
-  <h2>Open Source</h2>
-  <p>Most of my code is open source on <a href="https://github.com/nguyenminhduc9988" target="_blank" rel="noopener">GitHub</a>, including libraries for AI agent memory, JSON repair, configuration loading, and LLM cost estimation. I believe useful code should be readable, tested, and shared.</p>
+  <h2>What I Build — The Seven Projects</h2>
+  <p>This site is a hub that connects several focused projects, each maintained independently and built around a clear purpose:</p>
+  <ul>
+    <li><strong>Free Tools Hub (ToolNest).</strong> A growing collection of 67+ browser-based developer utilities: JSON formatter and validator, Base64 encoder/decoder, URL and HTML encoders, password generator, QR code maker, color converters, hash generators, and many more. Every tool is instant, offline-capable after first load, and processes data entirely on-device.</li>
+    <li><strong>Crypto Brief.</strong> Clear, jargon-free explainers of cryptocurrency and blockchain concepts. Rather than hype and price predictions, it focuses on how wallets, keys, consensus, and transactions actually work — written for people who want to understand the technology before they trust it.</li>
+    <li><strong>Finance Daily.</strong> Practical personal finance and money-management guides — budgeting frameworks, compound-interest explainers, debt-payoff strategies, and savings math — presented as tools and walkthroughs rather than generic advice columns.</li>
+    <li><strong>Health Today.</strong> Evidence-based health and wellness information, covering fitness fundamentals, nutrition basics, sleep, and habit-building, with calculators and trackers that run client-side.</li>
+    <li><strong>Productivity Hacks.</strong> Workflows and systems for focused work — time-blocking, task-management frameworks, keyboard-shortcut references, and repeatable processes for shipping real projects without burning out.</li>
+    <li><strong>AI Tool Hub.</strong> A curated directory of AI tools with practical how-to guides for using them well, focused on concrete tasks (writing, coding, summarizing, research) rather than hype.</li>
+    <li><strong>Duc Store.</strong> My digital products — ebooks, templates, and developer assets built and used by me. Sold through Gumroad, Payhip, and Stripe, each with clear licensing and a real support path.</li>
+  </ul>
+
+  <h2>How I Engineer These Tools</h2>
+  <p>Most of my tools share the same architecture: a single static HTML page, a small amount of vanilla JavaScript, and the browser's built-in APIs. There is no application server, no database, and no build pipeline more complex than necessary. The practical consequences are significant, and they're worth stating plainly.</p>
+  <p>Because there is no backend, the marginal cost of a new user is effectively zero. A tool can serve one person or a million without me provisioning another server, which is exactly why I can keep all of them free. Because the code is vanilla JavaScript with no framework lock-in, a tool I wrote two years ago still works today without a forced migration to a new major version of some library. And because every computation happens client-side, I never have to make a privacy promise I can't keep — I literally have no server on which to store your data.</p>
+  <p>I write zero-dependency Python for the libraries I open-source, using only the standard library. That discipline forces me to understand what I'm actually depending on, keeps the install footprint tiny, and makes the code auditable: a security-conscious user can read every line in a single sitting. When I do reach for a third-party package, it's a deliberate choice with a documented reason, never a reflexive <code>pip install</code>.</p>
+
+  <h2>Editorial Standards</h2>
+  <p>The articles and guides on this site are held to a standard I take seriously, because the whole point of writing them is that they should be worth your time to read.</p>
+  <p>Every guide starts from a real problem I needed to solve or a question I couldn't find a clear answer to. I write the first draft only after I've actually done the thing — run the benchmark, reproduced the bug, tested the workaround. Code samples are tested, not theoretical. When I cite a number (a parse rate, a byte size, a latency), it came from a real measurement on my machine, and I describe how it was taken so you can reproduce it. When I'm uncertain about something, I say so rather than papering over it with false confidence.</p>
+  <p>I do not publish AI-generated filler. Large language models are genuinely useful for some of my workflow — drafting, brainstorming, translating rough notes into prose — but no article goes live without being rewritten, fact-checked, and verified by me. If a sentence couldn't have come from my own keyboard after real experience, it doesn't belong on the site. This matters because Google's quality guidelines and the broader web are increasingly flooded with low-effort generated content, and the only durable response to that is to publish work that's demonstrably the product of a real human who actually did the thing.</p>
 
   <h2>How This Site Is Supported</h2>
-  <p>This site is supported through a mix of digital product sales (via Gumroad, Payhip, and Stripe), optional sponsorships, and contextual advertising. Advertising never affects which tools I build or what the guides recommend. Tools remain free and private regardless.</p>
+  <p>This site is funded through three channels, and I want to be transparent about all of them because the funding model is what allows the tools to stay free and private.</p>
+  <p>First, <strong>digital product sales</strong>. The Duc Store sells ebooks, templates, and developer assets through Gumroad, Payhip, and Stripe. These are real products I built and use, with clear licensing and a support path for buyers.</p>
+  <p>Second, <strong>optional sponsorships</strong> via GitHub Sponsors, for people who want to support the open-source work directly.</p>
+  <p>Third, <strong>contextual advertising</strong> through Google AdSense, which helps cover hosting and the time it takes to maintain dozens of tools and write in-depth guides.</p>
+  <div class="callout"><strong>Advertising never influences what I build or recommend.</strong> No advertiser can pay to change a tool's ranking in a guide, to have a feature removed, or to suppress a comparison. Tools remain free and private regardless of whether ads are shown on a given page, and I will not recommend a worse tool because a better one doesn't run ads. If that ever stops being true, this paragraph comes down with it.</div>
+
+  <h2>A Note on Expertise</h2>
+  <p>I want to be honest about what I am and am not. I am a working developer with years of experience building automation, developer tooling, and client-side web applications, and I've shipped enough of it to know where the sharp edges are. I am not a licensed financial advisor, a medical professional, a lawyer, or a certified security auditor — and the tools and guides in Finance Daily, Health Today, and the security articles are educational, not professional advice. Where a topic crosses into licensed territory, I say so plainly and point you to a qualified professional. I'd rather under-claim and over-deliver than the reverse.</p>
+  <p>What I can claim with confidence is that every tool on this site was built by me, tested by me, and is maintained by me — and that the writing reflects real experience rather than recycled summaries. If you find an error, a broken tool, or a guide that's wrong, I want to know about it, and I'll fix it. That openness to correction is, I think, the most important part of doing this credibly.</p>
 
   <h2>Get In Touch</h2>
-  <p>If you have a question, found a bug, or want to suggest a tool, the fastest way to reach me is through the <a href="/contact">contact page</a> or directly on <a href="https://github.com/nguyenminhduc9988" target="_blank" rel="noopener">GitHub</a>. I read everything, even if I can't reply to all of it.</p>
+  <p>If you have a question, found a bug, or want to suggest a tool, the fastest way to reach me is through the <a href="/contact.html">contact page</a> or directly on <a href="https://github.com/nguyenminhduc9988" target="_blank" rel="noopener">GitHub</a>. I read everything, even when I can't reply to all of it. If you'd like to read more before getting in touch, the <a href="/blog/">blog</a> collects my longer writing on privacy, tooling, and the craft of building software.</p>
 </div>
 
 <div class="footer">
   <a href="/">Home</a>
-  <a href="/about">About</a>
-  <a href="/contact">Contact</a>
-  <a href="/privacy-policy">Privacy</a>
-  <a href="/terms-of-service">Terms</a>
+  <a href="/about.html">About</a>
+  <a href="/blog/">Blog</a>
+  <a href="/contact.html">Contact</a>
+  <a href="/privacy-policy.html">Privacy</a>
+  <a href="/terms-of-service.html">Terms</a>
   <a href="https://github.com/nguyenminhduc9988" target="_blank" rel="noopener">GitHub</a>
 </div>
 </body>

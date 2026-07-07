@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Developer's Guide to Building Zero-Dependency Python Libraries</title>
+<meta name="description" content="Why relying only on the Python standard library makes your code more secure, auditable, and fast — with concrete patterns for parsing, validation, and configuration.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://nguyenminhduc9988.github.io/blog/zero-dependency-python-libraries.html">
+<meta property="og:title" content="A Developer's Guide to Building Zero-Dependency Python Libraries">
+<meta property="og:description" content="Why zero-dependency Python libraries are more secure, auditable, and fast — with real stdlib-only patterns.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://nguyenminhduc9988.github.io/blog/zero-dependency-python-libraries.html">
+<meta property="og:site_name" content="Duc Nguyen">
+<meta property="og:image" content="https://nguyenminhduc9988.github.io/og-image.png">
+<meta property="article:published_time" content="2026-07-07">
+<meta property="article:author" content="Duc Nguyen">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A Developer's Guide to Building Zero-Dependency Python Libraries">
+<meta name="twitter:description" content="Why zero-dependency Python libraries are more secure, auditable, and fast.">
+<meta name="twitter:image" content="https://nguyenminhduc9988.github.io/og-image.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236366f1'/%3E%3Cstop offset='1' stop-color='%23ec4899'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='%230a0a0f'/%3E%3Ctext x='50' y='70' font-family='Arial' font-size='50' font-weight='bold' text-anchor='middle' fill='url(%23g)'%3ED%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#050508;--bg-card:#0e0e12;--text:#e8e8f0;--text-muted:#888;--purple:#6366f1;--pink:#ec4899;--border:#1a1a24;--radius:10px;--mono:'JetBrains Mono',monospace}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.8}
+a{color:var(--purple);text-decoration:none}
+a:hover{text-decoration:underline}
+.nav{position:sticky;top:0;z-index:100;background:rgba(5,5,8,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 20px}
+.nav-inner{max-width:760px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-logo{font-size:1.1rem;font-weight:700;color:var(--text)}
+.nav-links{display:flex;gap:18px;flex-wrap:wrap}
+.nav-links a{color:var(--text-muted);font-size:.85rem}
+.nav-links a:hover{color:var(--text);text-decoration:none}
+.container{max-width:760px;margin:0 auto;padding:48px 20px 80px}
+.back-link{display:inline-block;font-size:.85rem;color:var(--text-muted);margin-bottom:24px}
+.back-link:hover{color:var(--purple)}
+article h1{font-size:2rem;font-weight:800;margin-bottom:12px;letter-spacing:-.5px;line-height:1.25}
+.post-meta{display:flex;align-items:center;gap:12px;margin-bottom:32px;font-size:.82rem;color:var(--text-muted)}
+.post-tag{background:rgba(99,102,241,.12);color:var(--purple);padding:3px 10px;border-radius:100px;font-size:.72rem;font-weight:600}
+article h2{font-size:1.3rem;font-weight:700;margin:36px 0 12px;color:var(--text);letter-spacing:-.2px}
+article h3{font-size:1.05rem;font-weight:600;margin:24px 0 8px;color:var(--text)}
+article p{color:var(--text-muted);font-size:.97rem;margin-bottom:16px}
+article ul{margin:0 0 18px 22px}
+article li{margin-bottom:8px;color:var(--text-muted);font-size:.97rem}
+article li strong{color:var(--text)}
+article code{font-family:var(--mono);background:var(--bg-card);border:1px solid var(--border);padding:2px 6px;border-radius:5px;font-size:.85rem;color:var(--pink)}
+article pre{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;overflow-x:auto;margin:0 0 18px}
+article pre code{background:none;border:none;padding:0;color:#c8c8d8;font-size:.85rem;line-height:1.6}
+.callout{background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--purple);border-radius:var(--radius);padding:16px 20px;margin:24px 0}
+.callout strong{color:var(--text)}
+.article-footer{margin-top:48px;padding-top:28px;border-top:1px solid var(--border);display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+.article-footer a{color:var(--purple);font-weight:600;font-size:.9rem}
+.footer{border-top:1px solid var(--border);padding:28px 20px;text-align:center;display:flex;gap:22px;justify-content:center;flex-wrap:wrap}
+.footer a{color:var(--text-muted);font-size:.85rem}
+.footer a:hover{color:var(--text)}
+@media(max-width:640px){.container{padding:32px 16px 60px}article h1{font-size:1.55rem}.nav-links{gap:12px}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a href="/" class="nav-logo">Duc Nguyen</a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/about.html">About</a>
+    <a href="/blog/">Blog</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/privacy-policy.html">Privacy</a>
+    <a href="/terms-of-service.html">Terms</a>
+  </div>
+</div></nav>
+
+<div class="container">
+  <a href="/blog/" class="back-link">← Back to Blog</a>
+  <article>
+    <h1>A Developer's Guide to Building Zero-Dependency Python Libraries</h1>
+    <div class="post-meta"><span class="post-tag">Python</span><span>July 7, 2026 · By Duc Nguyen · 7 min read</span></div>
+
+    <p>The Python ecosystem has a culture of composability — pull in the package you need, let the package manager resolve its dependencies, and ship. It's productive, and most of the time it's the right call. But there's a category of library where adding even one dependency is the wrong trade, and that category is larger than most developers assume. I maintain several open-source Python libraries that are strictly zero-dependency — they import nothing outside the standard library — and the benefits have been substantial enough that I now default to this approach for anything general-purpose. Here's why it matters, and the concrete patterns that make it practical.</p>
+
+    <h2>What "zero-dependency" actually means</h2>
+    <p>A zero-dependency library is one whose install brings in no third-party packages at all — not "just one small dependency," but genuinely none. You can verify this trivially: after <code>pip install</code>, the only new files on your system are the library's own. The Python standard library doesn't count, because it ships with Python itself and is maintained by the same people who maintain the language.</p>
+    <p>The distinction sounds pedantic until you've debugged a transitive-dependency conflict at 11 p.m. A library that depends on <code>requests</code>, which depends on <code>urllib3</code>, which depends on a specific <code>six</code> for Python 2 compatibility, pulls four packages into your environment — and any one of them can break you when it releases a new major version. "Just one dependency" is almost never one package; it's a subtree.</p>
+
+    <h2>Why it's worth the discipline</h2>
+
+    <h3>Security you can actually audit</h3>
+    <p>Every third-party package you install is code written by someone else, running with your program's privileges. The larger the dependency tree, the larger the attack surface — and supply-chain attacks via compromised packages are a real, recurring threat. A zero-dependency library shrinks that surface to just its own source, which a careful reviewer can read end to end in an afternoon. When I publish a library that handles configuration or data parsing, I want users to be able to satisfy themselves that it's safe without trusting an opaque web of packages they've never looked at.</p>
+
+    <h3>Fewer breaking changes</h3>
+    <p>Every external dependency is a version pin you have to maintain. When that dependency releases a backwards-incompatible major version, your library either breaks or forces you to do compatibility work. A zero-dependency library depends only on the Python standard library, which follows a careful, documented deprecation cycle measured in years. I have libraries written against Python 3.8 that still run unchanged on 3.12 — not because I'm a genius, but because the stdlib moves slowly and predictably.</p>
+
+    <h3>Faster, smaller installs</h3>
+    <p>Installing a zero-dependency library is a single, fast operation with no resolver to run and no subtree to fetch. That matters in CI pipelines, Docker builds, and constrained environments. It also means no version conflicts to resolve against whatever else is in the user's environment — your library slots in cleanly anywhere a compatible Python runs.</p>
+
+    <h2>The standard library is bigger than you think</h2>
+    <p>The most common reason developers reach for a dependency is the assumption that some task "needs" a package. In practice, the standard library covers a remarkable range, and re-acquainting yourself with it is the highest-leverage thing you can do for writing zero-dependency code. A few areas where I regularly see unnecessary third-party packages:</p>
+    <ul>
+      <li><strong>HTTP:</strong> <code>urllib.request</code> handles simple GET and POST with a few lines. You don't need <code>requests</code> unless you want its ergonomics — and for a library, a few lines of stdlib beats a heavy dependency.</li>
+      <li><strong>JSON:</strong> <code>json</code> is built in and handles the common cases. For more lenient parsing (trailing commas, comments), a small preprocessor beats pulling in a parser.</li>
+      <li><strong>Hashing and crypto:</strong> <code>hashlib</code> and <code>hmac</code> cover SHA-256, SHA-512, HMAC, and more, using the same audited primitives OpenSSL provides.</li>
+      <li><strong>Path handling:</strong> <code>pathlib</code> gives clean object-oriented paths and has largely eliminated the need for a paths library.</li>
+      <li><strong>Data classes:</strong> <code>dataclasses</code> removes most of the boilerplate that templating libraries used to solve.</li>
+      <li><strong>Type validation:</strong> a combination of <code>dataclasses</code>, type hints, and a few lines of validation logic handles the cases people reach for <code>pydantic</code> to solve — not all of them, but more than you'd guess.</li>
+    </ul>
+
+    <h2>Concrete patterns</h2>
+
+    <h3>Config loading without a config library</h3>
+    <p>Configuration loading is a classic case where developers pull in TOML or YAML parsers. Since Python 3.11, <code>tomllib</code> is in the standard library, so TOML config is free. For earlier versions, <code>configparser</code> handles INI files natively. A configuration loader I maintain is built entirely on <code>tomllib</code> plus <code>pathlib</code>, and it's under 150 lines:</p>
+    <pre><code>import tomllib
+from pathlib import Path
+from dataclasses import dataclass
+
+@dataclass
+class AppConfig:
+    api_key: str
+    timeout: int = 30
+
+def load_config(path: str | Path) -> AppConfig:
+    p = Path(path)
+    with p.open("rb") as f:
+        data = tomllib.load(f)
+    return AppConfig(
+        api_key=data["api"]["key"],
+        timeout=data.get("api", {}).get("timeout", 30),
+    )</code></pre>
+    <p>No external parsing library, no validation framework, no dependency footprint. The dataclass gives type safety, <code>tomllib</code> does the parsing, and the loader is a pure function you can test in isolation.</p>
+
+    <h3>Validation without a schema library</h3>
+    <p>For lightweight validation, a small helper using type hints and explicit checks is often enough:</p>
+    <pre><code>def validate_positive(value, name="value"):
+    if not isinstance(value, (int, float)) or value &lt;= 0:
+        raise ValueError(f"{name} must be a positive number, got {value!r}")
+    return value</code></pre>
+    <p>This won't replace a full schema validator for complex nested structures, and I'm honest about that — for those cases a dependency may be justified. But for the long tail of "is this a positive integer, is this a non-empty string, is this a valid URL," inline checks keep the library dependency-free and the intent obvious at the call site.</p>
+
+    <h3>Estimating costs without a financial library</h3>
+    <p>One of my libraries estimates LLM API costs. The math is just token counts multiplied by per-token prices. There's no reason that needs a dependency — it's arithmetic. Keeping it stdlib-only means a user can install it in any environment without worrying about conflicts, and audit the pricing logic in a single read.</p>
+
+    <h2>When a dependency is the right call</h2>
+    <p>I don't want to overstate the case. There are domains where pulling in a well-maintained package is unambiguously correct: a real ORM over hand-rolled SQL, a battle-tested cryptography library when the standard library's primitives don't cover your needs, a parser generator for a complex grammar. The discipline isn't "never use dependencies" — it's "default to none, and justify each one you add." When I do add a dependency, I document why in the README, so the choice is visible and reversible rather than accidental.</p>
+    <p>The test I apply: does this dependency solve a problem I genuinely can't solve in a reasonable amount of stdlib code, or am I reaching for it out of habit? Far more often than not, the honest answer is habit.</p>
+
+    <div class="callout"><strong>The mindset shift:</strong> treating dependencies as costs rather than conveniences. Each one is a small ongoing tax — on security, on maintenance, on install time, on compatibility. A zero-dependency library pays none of those taxes, and for general-purpose code that others will depend on, that's a gift to the people who use it.</div>
+
+    <h2>Making it sustainable</h2>
+    <p>The practical cost of zero-dependency development is that you write more of the glue code yourself. I keep this manageable by building a small internal set of patterns I reuse across libraries — the config loader above, a few validation helpers, a consistent error hierarchy — so the "writing it myself" tax is paid once and amortized. And because the standard library is stable, code I write today tends to keep working for years without the churn that dependency-heavy libraries endure.</p>
+
+    <h2>Try it on your next library</h2>
+    <p>If you're starting a new Python library, try a simple experiment: commit to zero third-party dependencies for the first version. Each time you're about to add one, write down what problem it solves and whether the standard library can solve it in ten or twenty lines. You'll likely find, as I did, that the vast majority of "necessary" dependencies dissolve on contact with that question — and what remains is a library that's faster to install, easier to audit, and far less likely to break someone's environment six months from now.</p>
+    <p>The best dependency is the one your users never have to install.</p>
+
+    <div class="article-footer">
+      <a href="/blog/">← All articles</a>
+      <a href="/">← Back to home</a>
+    </div>
+  </article>
+</div>
+
+<div class="footer">
+  <a href="/">Home</a>
+  <a href="/about.html">About</a>
+  <a href="/blog/">Blog</a>
+  <a href="/contact.html">Contact</a>
+  <a href="/privacy-policy.html">Privacy</a>
+  <a href="/terms-of-service.html">Terms</a>
+  <a href="https://github.com/nguyenminhduc9988" target="_blank" rel="noopener">GitHub</a>
+</div>
+</body>
+</html>

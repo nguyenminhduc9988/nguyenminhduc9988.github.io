@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Building a Developer Portfolio That Actually Gets Read</title>
+<meta name="description" content="Most developer portfolios are skimmed and forgotten. Here's how to structure one that recruiters and hiring managers actually read — what to include, what to cut, how to showcase real shipped work.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://nguyenminhduc9988.github.io/blog/build-developer-portfolio-that-gets-read.html">
+<meta property="og:title" content="Building a Developer Portfolio That Actually Gets Read">
+<meta property="og:description" content="How to structure a developer portfolio that recruiters and hiring managers actually read — what to include, what to cut.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://nguyenminhduc9988.github.io/blog/build-developer-portfolio-that-gets-read.html">
+<meta property="og:site_name" content="Duc Nguyen">
+<meta property="og:image" content="https://nguyenminhduc9988.github.io/og-image.png">
+<meta property="article:published_time" content="2026-07-07">
+<meta property="article:author" content="Duc Nguyen">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Building a Developer Portfolio That Actually Gets Read">
+<meta name="twitter:description" content="How to structure a developer portfolio that recruiters and hiring managers actually read.">
+<meta name="twitter:image" content="https://nguyenminhduc9988.github.io/og-image.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236366f1'/%3E%3Cstop offset='1' stop-color='%23ec4899'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='%230a0a0f'/%3E%3Ctext x='50' y='70' font-family='Arial' font-size='50' font-weight='bold' text-anchor='middle' fill='url(%23g)'%3ED%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#050508;--bg-card:#0e0e12;--text:#e8e8f0;--text-muted:#888;--purple:#6366f1;--pink:#ec4899;--border:#1a1a24;--radius:10px;--mono:'JetBrains Mono',monospace}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.8}
+a{color:var(--purple);text-decoration:none}
+a:hover{text-decoration:underline}
+.nav{position:sticky;top:0;z-index:100;background:rgba(5,5,8,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 20px}
+.nav-inner{max-width:760px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-logo{font-size:1.1rem;font-weight:700;color:var(--text)}
+.nav-links{display:flex;gap:18px;flex-wrap:wrap}
+.nav-links a{color:var(--text-muted);font-size:.85rem}
+.nav-links a:hover{color:var(--text);text-decoration:none}
+.container{max-width:760px;margin:0 auto;padding:48px 20px 80px}
+.back-link{display:inline-block;font-size:.85rem;color:var(--text-muted);margin-bottom:24px}
+.back-link:hover{color:var(--purple)}
+article h1{font-size:2rem;font-weight:800;margin-bottom:12px;letter-spacing:-.5px;line-height:1.25}
+.post-meta{display:flex;align-items:center;gap:12px;margin-bottom:32px;font-size:.82rem;color:var(--text-muted)}
+.post-tag{background:rgba(99,102,241,.12);color:var(--purple);padding:3px 10px;border-radius:100px;font-size:.72rem;font-weight:600}
+article h2{font-size:1.3rem;font-weight:700;margin:36px 0 12px;color:var(--text);letter-spacing:-.2px}
+article h3{font-size:1.05rem;font-weight:600;margin:24px 0 8px;color:var(--text)}
+article p{color:var(--text-muted);font-size:.97rem;margin-bottom:16px}
+article ul{margin:0 0 18px 22px}
+article li{margin-bottom:8px;color:var(--text-muted);font-size:.97rem}
+article li strong{color:var(--text)}
+article code{font-family:var(--mono);background:var(--bg-card);border:1px solid var(--border);padding:2px 6px;border-radius:5px;font-size:.85rem;color:var(--pink)}
+.callout{background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--purple);border-radius:var(--radius);padding:16px 20px;margin:24px 0}
+.callout strong{color:var(--text)}
+.article-footer{margin-top:48px;padding-top:28px;border-top:1px solid var(--border);display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+.article-footer a{color:var(--purple);font-weight:600;font-size:.9rem}
+.footer{border-top:1px solid var(--border);padding:28px 20px;text-align:center;display:flex;gap:22px;justify-content:center;flex-wrap:wrap}
+.footer a{color:var(--text-muted);font-size:.85rem}
+.footer a:hover{color:var(--text)}
+@media(max-width:640px){.container{padding:32px 16px 60px}article h1{font-size:1.55rem}.nav-links{gap:12px}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a href="/" class="nav-logo">Duc Nguyen</a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/about.html">About</a>
+    <a href="/blog/">Blog</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/privacy-policy.html">Privacy</a>
+    <a href="/terms-of-service.html">Terms</a>
+  </div>
+</div></nav>
+
+<div class="container">
+  <a href="/blog/" class="back-link">← Back to Blog</a>
+  <article>
+    <h1>Building a Developer Portfolio That Actually Gets Read</h1>
+    <div class="post-meta"><span class="post-tag">Career</span><span>July 7, 2026 · By Duc Nguyen · 7 min read</span></div>
+
+    <p>Most developer portfolios are skimmed for ten seconds and forgotten. The reason is almost never a lack of skill on the developer's part — it's that the portfolio buries the signal under noise: generic bios, screenshot galleries of half-finished projects, buzzword lists, and no clear reason for a busy reviewer to keep reading. I've maintained a portfolio for years that doubles as my actual product hub, and the difference between a portfolio that gets read and one that doesn't comes down to a few structural choices. Here's what actually works, based on what I've changed and what I've seen land.</p>
+
+    <h2>Lead with what you shipped, not who you are</h2>
+    <p>The opening of your portfolio should answer one question immediately: what has this person built that I can see or use? Reviewers — recruiters, hiring managers, potential collaborators — are scanning for evidence of capability, and they want that evidence in the first few seconds. A paragraph about your passion for technology is noise at the top. A short, concrete statement of what you've shipped is signal.</p>
+    <p>The strongest openings name real things: "I've built 67 browser-based developer tools used by N people," "I maintain three open-source libraries with X monthly downloads," "I shipped a product that does Y." Notice that each of these is verifiable. A reviewer can click through and check. That verifiability is what separates a credible portfolio from a decorative one.</p>
+    <p>My own portfolio leads with a count of real things — tools, articles, products — because those numbers are concrete and the work backs them up. The "who I am" content lives on a separate About page for anyone who wants the longer story.</p>
+
+    <h2>Show working projects, not screenshots</h2>
+    <p>The single biggest upgrade you can make to a portfolio is to link to things that actually work. A live tool a reviewer can click and use in five seconds beats a polished screenshot of a tool they can't touch. The reason is simple: a working project proves you can ship; a screenshot only proves you can design a mockup. Reviewers know the difference, and they weight it heavily.</p>
+    <p>This is why a portfolio built around real, deployed projects is so effective. If you build tools, host them and link to the live versions. If you write libraries, link to the package on the registry with its download stats. If you've contributed to open source, link to merged pull requests. Every project entry should answer: <em>can I see this working?</em> If the answer is no, the entry is much weaker than it could be.</p>
+
+    <div class="callout"><strong>The test:</strong> for each project in your portfolio, ask whether a stranger could click one link and experience it within ten seconds. If they can't, the entry is doing less work than it should.</div>
+
+    <h2>Write the case study, not the feature list</h2>
+    <p>For your strongest two or three projects, go beyond a one-line description and write a short case study. A feature list says "it has X." A case study says "here's the problem, here's why it was hard, here's what I did, and here's what happened." That structure — problem, constraint, approach, outcome — is the format every reviewer instinctively looks for, because it's how real engineering work actually gets discussed.</p>
+    <p>A good case study includes the trade-offs you weighed. Did you pick a technology because it was the right tool, or because it was the one you knew? What did you decide not to build, and why? What broke, and how did you fix it? These details are impossible to fake, which is exactly why they're so convincing. Anyone can list "React, Node, PostgreSQL" as skills. Far fewer can explain why they chose a serverless architecture for a specific project and what it cost them.</p>
+    <p>Keep each case study tight — a few paragraphs, not an essay. The goal is to demonstrate depth, not to overwhelm. Two strong, specific case studies beat ten vague ones every time.</p>
+
+    <h2>What to cut</h2>
+    <p>Portfolios die from accumulation. Over time, every project you ever touched gets added, and the result is a long, undifferentiated list that tells the reviewer nothing about what you're actually best at. A good portfolio is edited as ruthlessly as a good essay.</p>
+    <ul>
+      <li><strong>Cut unfinished projects</strong> unless the unfinished part is itself interesting (an ambitious architecture you can explain). A graveyard of half-built things signals scattered effort.</li>
+      <li><strong>Cut generic skill lists.</strong> "HTML, CSS, JavaScript, React, Node" tells a reviewer nothing they couldn't guess. Show the skills through the projects instead.</li>
+      <li><strong>Cut tutorials presented as projects.</strong> A cloned todo app or a course exercise doesn't demonstrate original work. Keep it only if you extended it meaningfully.</li>
+      <li><strong>Cut anything you can't speak to in detail.</strong> If an interviewer could ask you about a project and you'd struggle to answer, it shouldn't be in your portfolio.</li>
+    </ul>
+    <p>The paradox of cutting is that a shorter portfolio with three excellent projects reads as more impressive than a long one with fifteen mediocre ones. Curation is itself a signal of judgment.</p>
+
+    <h2>Make the writing count</h2>
+    <p>One of the most underrated moves in a developer portfolio is including real writing — articles or guides that demonstrate you can think and communicate, not just code. Hiring managers consistently rank communication among the most valuable and hardest-to-find skills in engineers, and a few well-written technical posts prove it more than any "excellent communication skills" bullet point ever could.</p>
+    <p>The writing doesn't need to be frequent, and it doesn't need to be about trendy topics. A single deep post on a problem you actually solved — how you debugged a nasty concurrency bug, why you chose a particular architecture, what you learned maintaining a library — demonstrates more than a year of shallow hot-takes. This is part of why I keep a blog alongside my tools: it's where the thinking behind the building lives, and it's readable evidence that I can explain technical decisions clearly.</p>
+
+    <h2>Structure: the hierarchy that works</h2>
+    <p>Putting it together, a portfolio that gets read tends to follow this shape:</p>
+    <ul>
+      <li><strong>A strong opening line</strong> stating what you've built and what you do, in one or two concrete sentences.</li>
+      <li><strong>A projects section</strong> leading with live, working links, each with a one-line description and a clear path to try it.</li>
+      <li><strong>Two or three case studies</strong> for your best work, each explaining the problem, approach, and outcome.</li>
+      <li><strong>A writing section</strong> linking to a few of your best technical posts, if you have them.</li>
+      <li><strong>A short About page</strong> with the longer bio, for readers who want context.</li>
+      <li><strong>A clear contact path</strong> — GitHub, email, or wherever you actually respond.</li>
+    </ul>
+    <p>Notice what's absent: a giant skills matrix, a photo carousel, a "fun facts" section, animated counters. Each of those is a distraction from the thing the reviewer is actually trying to assess.</p>
+
+    <h2>Make it fast, make it yours</h2>
+    <p>Finally, two practical notes. First, <strong>your portfolio should load quickly.</strong> A site that takes five seconds to render a hero animation is telling a technical reviewer that you don't prioritize performance — and for a developer portfolio, that's a bad first impression. Static, fast, and clean beats heavy and flashy. Second, <strong>let some personality show.</strong> A portfolio that reads like it could belong to anyone is forgettable. A specific voice, a genuine opinion about your stack, an honest account of what you found hard — these are the details that make a reviewer remember you after they've closed the tab.</p>
+
+    <h2>The portfolio as a living thing</h2>
+    <p>The best portfolios aren't built once and abandoned; they're maintained alongside the work. Each time you ship something new, it earns a place; each time you grow past an old project, it comes off. That ongoing editing keeps the portfolio an honest reflection of what you can actually do right now, which is the only thing a reviewer really wants to know. Build real things, show them working, write about them clearly, and cut everything that doesn't help. The rest takes care of itself.</p>
+
+    <div class="article-footer">
+      <a href="/blog/">← All articles</a>
+      <a href="/">← Back to home</a>
+    </div>
+  </article>
+</div>
+
+<div class="footer">
+  <a href="/">Home</a>
+  <a href="/about.html">About</a>
+  <a href="/blog/">Blog</a>
+  <a href="/contact.html">Contact</a>
+  <a href="/privacy-policy.html">Privacy</a>
+  <a href="/terms-of-service.html">Terms</a>
+  <a href="https://github.com/nguyenminhduc9988" target="_blank" rel="noopener">GitHub</a>
+</div>
+</body>
+</html>
