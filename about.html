@@ -30,39 +30,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#050508;--bg-card:#0e0e12;--text:#e8e8f0;--text-muted:#888;--purple:#6366f1;--pink:#ec4899;--border:#1a1a24;--radius:10px;--mono:'JetBrains Mono',monospace}
-body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.75}
-a{color:var(--purple);text-decoration:none}
-a:hover{text-decoration:underline}
-.nav{position:sticky;top:0;z-index:100;background:rgba(5,5,8,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 20px}
-.nav-inner{max-width:800px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
-.nav-logo{font-size:1.1rem;font-weight:700;color:var(--text)}
-.nav-links{display:flex;gap:20px;flex-wrap:wrap}
-.nav-links a{color:var(--text-muted);font-size:.85rem}
-.nav-links a:hover{color:var(--text);text-decoration:none}
-.container{max-width:800px;margin:0 auto;padding:48px 20px 80px}
-.container h1{font-size:2.2rem;font-weight:800;margin-bottom:8px;letter-spacing:-.5px}
-.updated{color:var(--text-muted);font-size:.85rem;margin-bottom:36px}
-.lead{color:var(--text);font-size:1.05rem;font-weight:400;margin-bottom:24px}
-h2{font-size:1.35rem;font-weight:700;margin:40px 0 14px;color:var(--text);letter-spacing:-.3px}
-h3{font-size:1.05rem;font-weight:600;margin:24px 0 8px;color:var(--text)}
-p{color:var(--text-muted);font-size:.95rem;margin-bottom:14px}
-ul{margin:0 0 16px 22px}
-li{margin-bottom:8px;color:var(--text-muted);font-size:.95rem}
-li strong{color:var(--text)}
 .stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:28px 0}
 .stat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center}
 .stat-card .num{font-size:1.7rem;font-weight:800;color:var(--purple)}
 .stat-card .label{font-size:.78rem;color:var(--text-muted);margin-top:4px}
 .quote{border-left:3px solid var(--purple);padding:10px 0 10px 20px;margin:28px 0;color:var(--text);font-style:italic;font-size:1.02rem}
-.callout{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:18px 22px;margin:24px 0}
-.callout strong{color:var(--text)}
-.footer{border-top:1px solid var(--border);padding:28px 20px;text-align:center;display:flex;gap:22px;justify-content:center;flex-wrap:wrap}
-.footer a{color:var(--text-muted);font-size:.85rem}
-.footer a:hover{color:var(--text)}
-@media(max-width:640px){.container{padding:32px 16px 60px}.container h1{font-size:1.7rem}.nav-links{gap:14px}}
 </style>
 </head>
 <body>
@@ -86,11 +60,11 @@ li strong{color:var(--text)}
 
   <div class="stat-grid">
     <div class="stat-card"><div class="num">67+</div><div class="label">Free Tools</div></div>
-    <div class="stat-card"><div class="num">96+</div><div class="label">Articles</div></div>
-    <div class="stat-card"><div class="num">8</div><div class="label">Sites</div></div>
+    <div class="stat-card"><div class="num">8</div><div class="label">Sites in Network</div></div>
     <div class="stat-card"><div class="num">36</div><div class="label">Products</div></div>
     <div class="stat-card"><div class="num">100%</div><div class="label">Client-Side</div></div>
   </div>
+  <p style="font-size:.8rem;color:var(--text-muted);margin-top:-12px;margin-bottom:24px">Counts span my full network of sites (Free Tools Hub, Crypto Brief, Finance Daily, and the others listed below) — not just this root domain. This page's own articles are in the <a href="/blog/">blog</a>.</p>
 
   <h2>How I Got Here</h2>
   <p>I'm a self-taught developer. I didn't come up through a formal computer science program — I learned by building things I needed and couldn't find, by reading source code written by people better than me, and by fixing the same stubborn bug at 2 a.m. enough times that it eventually taught me something. That path shaped how I work today: I respect craft over credentials, working software over presentations, and a small tool that solves one problem completely over a sprawling platform that solves none of them well.</p>
