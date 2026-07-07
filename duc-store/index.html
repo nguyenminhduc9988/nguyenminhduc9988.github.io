@@ -148,6 +148,35 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 .hero h1{font-size:1.75rem}
 }
 
+/* LIMITED-TIME DEALS BANNER */
+.deals-banner{padding:.5rem 1.5rem 1.5rem;max-width:1100px;margin:0 auto}
+.deals-inner{background:linear-gradient(135deg,rgba(99,102,241,.12),rgba(236,72,153,.1));border:1px solid rgba(236,72,153,.25);border-radius:var(--radius-lg);padding:1.5rem;box-shadow:0 0 40px rgba(236,72,153,.08)}
+.deals-head{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin-bottom:1.25rem}
+.deals-head h2{font-size:1.3rem;font-weight:800;background:linear-gradient(135deg,var(--accent-1),var(--accent-3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.deals-flame{font-size:1.5rem}
+.deals-timer{margin-left:auto;font-size:.78rem;color:var(--amber);font-weight:600;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.25);padding:.3rem .8rem;border-radius:var(--radius-full)}
+.deals-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.deal-card{background:var(--bg-card);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:1.25rem;display:flex;flex-direction:column;gap:.5rem;transition:all .3s}
+.deal-card:hover{border-color:rgba(236,72,153,.4);transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.35)}
+.deal-tag{align-self:flex-start;font-size:.7rem;font-weight:700;letter-spacing:.04em;padding:.25rem .6rem;border-radius:var(--radius-full);background:linear-gradient(135deg,var(--accent-3),var(--accent-1));color:#fff}
+.deal-card h3{font-size:.95rem;font-weight:700;line-height:1.3}
+.deal-price{font-family:var(--mono);display:flex;align-items:baseline;gap:.5rem}
+.deal-price .was{color:var(--text-muted);text-decoration:line-through;font-size:.9rem}
+.deal-price .now{color:var(--green);font-weight:800;font-size:1.25rem}
+.deal-desc{font-size:.78rem;color:var(--text-dim);line-height:1.5;flex:1}
+.code-row{display:flex;align-items:center;gap:.5rem;margin-top:.25rem}
+.deal-code{font-family:var(--mono);font-weight:700;font-size:.95rem;letter-spacing:.08em;background:rgba(34,197,94,.12);border:1px dashed rgba(34,197,94,.4);color:#4ade80;padding:.45rem .75rem;border-radius:8px;flex:1;text-align:center;user-select:all}
+.copy-btn{cursor:pointer;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:var(--text);font-size:.75rem;font-weight:600;padding:.45rem .8rem;border-radius:8px;transition:all .2s}
+.copy-btn:hover{background:rgba(34,197,94,.15);border-color:rgba(34,197,94,.4);color:#4ade80}
+.copy-btn.copied{background:rgba(34,197,94,.2);border-color:rgba(34,197,94,.5);color:#4ade80}
+.deal-cta{justify-content:center;margin-top:.5rem;width:100%}
+.deals-fineprint{font-size:.7rem;color:var(--text-muted);text-align:center;margin-top:1rem}
+.featured-code-hint{font-size:.72rem;color:var(--amber);margin-bottom:.5rem}
+.featured-code-hint code{font-family:var(--mono);background:rgba(34,197,94,.12);color:#4ade80;padding:.1rem .35rem;border-radius:4px;font-weight:700}
+.copy-toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(160%);background:var(--green);color:#06121f;font-weight:700;font-size:.85rem;padding:.7rem 1.4rem;border-radius:var(--radius-full);box-shadow:0 8px 28px rgba(0,0,0,.4);z-index:1000;transition:transform .3s ease,opacity .3s ease;opacity:0}
+.copy-toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+@media(max-width:600px){.deals-timer{margin-left:0;width:100%;text-align:center}.deals-head{justify-content:center}}
+
 </style>
 </head>
 <body>
@@ -173,6 +202,53 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
       <a href="#products" class="btn-primary">Browse All Products ↓</a>
       <a href="https://discord.gg/ybeFEAyaP3" target="_blank" rel="noopener" class="btn-secondary">💬 Join Discord</a>
     </div>
+  </div>
+</section>
+
+<!-- LIMITED-TIME DEALS BANNER -->
+<section class="deals-banner" id="deals">
+  <div class="deals-inner">
+    <div class="deals-head">
+      <span class="deals-flame">🔥</span>
+      <h2>Limited-Time Launch Deals</h2>
+      <span class="deals-timer">Save up to 50% — codes expire soon</span>
+    </div>
+    <div class="deals-grid">
+      <div class="deal-card">
+        <div class="deal-tag">50% OFF</div>
+        <h3>The Ultimate AI Prompt Vault — 68 Prompts</h3>
+        <p class="deal-price"><span class="was">$7</span> <span class="now">$3.50</span></p>
+        <p class="deal-desc">68 prompts to run your entire solo business — our biggest pack, biggest saving.</p>
+        <div class="code-row">
+          <code class="deal-code">FLASH50</code>
+          <button class="copy-btn" data-code="FLASH50" type="button">Copy</button>
+        </div>
+        <a href="https://ducminh5.gumroad.com/l/slrlhk" target="_blank" rel="noopener" class="btn-primary deal-cta">Get the Vault →</a>
+      </div>
+      <div class="deal-card">
+        <div class="deal-tag">40% OFF</div>
+        <h3>Morning Routine Prompts — #1 Bestseller</h3>
+        <p class="deal-price"><span class="was">$2.99</span> <span class="now">$1.79</span></p>
+        <p class="deal-desc">15 copy-paste prompts that run your morning on autopilot — our top seller.</p>
+        <div class="code-row">
+          <code class="deal-code">DEV40</code>
+          <button class="copy-btn" data-code="DEV40" type="button">Copy</button>
+        </div>
+        <a href="https://ducminh5.gumroad.com/l/zoply" target="_blank" rel="noopener" class="btn-primary deal-cta">Get the Pack →</a>
+      </div>
+      <div class="deal-card">
+        <div class="deal-tag">40% OFF</div>
+        <h3>The Weekly Reset Checklist — 40 Questions</h3>
+        <p class="deal-price"><span class="was">$2.99</span> <span class="now">$1.79</span></p>
+        <p class="deal-desc">40 reflection questions to close every week with clarity and a plan.</p>
+        <div class="code-row">
+          <code class="deal-code">SAVE40</code>
+          <button class="copy-btn" data-code="SAVE40" type="button">Copy</button>
+        </div>
+        <a href="https://ducminh5.gumroad.com/l/pbmmnz" target="_blank" rel="noopener" class="btn-primary deal-cta">Get the Checklist →</a>
+      </div>
+    </div>
+    <p class="deals-fineprint">Tap <strong>Copy</strong>, then paste the code in the discount box at Gumroad checkout. One code per order.</p>
   </div>
 </section>
 
@@ -413,6 +489,35 @@ document.querySelectorAll('.filter-pill').forEach(function(pill) {
     });
   });
 });
+</script>
+
+<!-- DEAL COPY JS -->
+<script>
+(function(){
+  var toast=document.createElement('div');
+  toast.className='copy-toast';
+  toast.textContent='✓ Code copied — paste it at checkout';
+  document.body.appendChild(toast);
+  document.querySelectorAll('.copy-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var code=btn.getAttribute('data-code');
+      function done(){
+        btn.classList.add('copied');btn.textContent='Copied!';
+        toast.classList.add('show');
+        setTimeout(function(){toast.classList.remove('show');},1900);
+        setTimeout(function(){btn.classList.remove('copied');btn.textContent='Copy';},1900);
+      }
+      function fallback(){
+        var t=document.createElement('textarea');t.value=code;t.setAttribute('readonly','');
+        t.style.position='absolute';t.style.left='-9999px';document.body.appendChild(t);
+        t.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(t);done();
+      }
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(code).then(done).catch(function(){fallback();});
+      }else{fallback();}
+    });
+  });
+})();
 </script>
 
 </body>
