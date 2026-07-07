@@ -1,7 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://nguyenminhduc9988.github.io/free-tools-hub/sitemap.xml
-Sitemap: https://nguyenminhduc9988.github.io/crypto-brief/sitemap.xml
-Sitemap: https://nguyenminhduc9988.github.io/finance-daily/sitemap.xml
-Sitemap: https://nguyenminhduc9988.github.io/health-today/sitemap.xml
-Sitemap: https://nguyenminhduc9988.github.io/productivity-hacks/sitemap.xml
+
+Sitemap: https://nguyenminhduc9988.github.io/sitemap.xml
