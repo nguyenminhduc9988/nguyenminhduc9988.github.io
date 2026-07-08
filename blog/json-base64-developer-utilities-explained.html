@@ -50,6 +50,8 @@ article pre code{background:none;border:none;padding:0;color:#c8c8d8;font-size:.
 .post-tag{background:rgba(99,102,241,.12);color:var(--purple);padding:3px 10px;border-radius:100px;font-size:.72rem;font-weight:600}
 .article-footer{margin-top:48px;padding-top:28px;border-top:1px solid var(--border);display:flex;gap:18px;flex-wrap:wrap;align-items:center}
 .article-footer a{color:var(--purple);font-weight:600;font-size:.9rem}
+.callout{background:var(--bg-card);border-left:3px solid var(--purple);border-radius:0 var(--radius) var(--radius) 0;padding:14px 18px;margin:20px 0;font-size:.9rem;color:var(--text-muted)}
+.callout strong{color:var(--text)}
 </style>
 </head>
 <body>
@@ -69,7 +71,7 @@ article pre code{background:none;border:none;padding:0;color:#c8c8d8;font-size:.
   <a href="/blog/" class="back-link">← Back to Blog</a>
   <article>
     <h1>JSON, Base64, and the Developer Utilities You Use Every Day — Explained</h1>
-    <div class="post-meta"><span class="post-tag">Fundamentals</span><span>July 7, 2026 · By Duc Nguyen · 6 min read</span></div>
+    <div class="post-meta"><span class="post-tag">Fundamentals</span><span>July 7, 2026 · By Duc Nguyen · 13 min read</span></div>
 
     <p>JSON and Base64 are two of the most frequently used formats in software development, and two of the least understood. Most developers reach for them daily — formatting an API payload, encoding a token, debugging a response — without a clear mental model of what each one actually is. That gap is where the bugs live: mangled encodings, silent data corruption, tokens that fail validation for reasons no one can explain. Let's make these formats concrete, so the next time something breaks you know exactly where to look.</p>
 
@@ -120,7 +122,7 @@ article pre code{background:none;border:none;padding:0;color:#c8c8d8;font-size:.
     <pre><code>{
   "filename": "report.pdf",
   "mime": "application/pdf",
-  "data": "JVBERi0xLjQKJ..." 
+  "data": "JVBERi0xLjQKJ..."
 }</code></pre>
     <p>The <code>data</code> field is Base64-encoded binary, sitting safely inside a JSON structure. The receiver decodes it back to bytes. This works, but remember the cost: that field is a third larger than the raw file, and the JSON payload carries it all in memory during parsing.</p>
 
@@ -140,12 +142,25 @@ function encode(str) {
     <p>While we're here: URL encoding (percent-encoding) is often confused with Base64, but it solves a different problem. URL encoding makes a string safe to put inside a URL by replacing reserved or non-ASCII characters with <code>%</code>-prefixed hex codes — a space becomes <code>%20</code>, an ampersand becomes <code>%26</code>. You use it when embedding arbitrary text in a query parameter, not when transporting binary. Confusing the two produces URLs that either break or, worse, silently do something unintended.</p>
 
     <h2>Why these utilities deserve their own tools</h2>
-    <p>    <p>None of these formats is conceptually hard, but each has enough sharp edges — strict parsing rules, encoding traps, size trade-offs — that a reliable utility saves real time. The reason I built formatters and encoders as client-side tools is precisely that you shouldn't have to paste sensitive API keys or production payloads into a random server-side converter to debug them. A tool that formats your JSON or decodes your Base64 entirely in your browser keeps that data private while it fixes the immediate problem. (I wrote about why that architectural choice matters in <a href="/blog/why-client-side-tools-protect-your-privacy.html">why client-side tools protect your privacy</a>.)</p>
-    <p>Beyond privacy, there is a practical productivity argument. A good utility handles the edge cases you would otherwise waste twenty minutes debugging: trailing commas in JSON, missing padding in Base64, Unicode characters that silently corrupt in transit, URL fragments that break a query string. When the tool is client-side, those edge cases are handled in the same environment where you are working — your browser — which means you can iterate quickly, try different inputs, and see results instantly without worrying about network latency or server-side rate limits. The cumulative time saved across a team over months of daily use is substantial, and the privacy benefit is simply a structural side effect of a smarter architectural choice.</p>
-    <p>One variant worth knowing about is <strong>URL-safe Base64</strong>. Standard Base64 uses <code>+</code> and <code>/</code> in its alphabet, which have special meaning in URLs. URL-safe Base64 substitutes <code>-</code> for <code>+</code> and <code>_</code> for <code>/</code>, and strips the padding <code>=</code> characters. You will see this in JWTs and web API tokens. If you decode a JWT segment with a standard Base64 decoder and it fails, this is usually why — the decoder expects the standard alphabet but the token uses the URL-safe variant. A good tool handles both transparently, which is one more reason to use a purpose-built utility rather than hacking it with command-line one-liners.</p>
+    <p>None of these formats is conceptually hard, but each has enough sharp edges — strict parsing rules, encoding traps, size trade-offs — that a reliable utility saves real time. The reason I built formatters and encoders as client-side tools is precisely that you shouldn't have to paste sensitive API keys or production payloads into a random server-side converter to debug them. A tool that formats your JSON or decodes your Base64 entirely in your browser keeps that data private while it fixes the immediate problem. (I wrote about why that architectural choice matters in <a href="/blog/why-client-side-tools-protect-your-privacy.html">why client-side tools protect your privacy</a>.)</p>
 
     <h2>The mental model to keep</h2>
     <p>If you take one thing from this: JSON is for <em>structure</em>, Base64 is for <em>transport</em>, URL encoding is for <em>URLs</em>, and none of them is for <em>security</em>. Know which problem you're solving, reach for the format that solves that problem, and you'll avoid the silent failures that make these formats feel finicky. The utilities are there to handle the fiddly details; understanding what each one is for is what keeps you out of trouble in the first place.</p>
+
+    <h2>Real-world debugging scenarios</h2>
+    <p>Here are three situations where understanding these formats saved hours:</p>
+    <ul>
+      <li><strong>The truncated API key.</strong> A developer pasted a 256-bit key into a JSON config as a number. JSON parsers truncated it to 53 bits of precision (IEEE 754). The fix: quote it as a string.</li>
+      <li><strong>The broken JWT.</strong> A token validation failed because the payload segment had lost its padding during a string replacement. Base64URL encoding drops padding; the fix was to re-add <code>=</code> until the length was a multiple of 4 before decoding.</li>
+      <li><strong>The corrupted emoji.</strong> A chat export used <code>btoa()</code> directly on user messages. Every emoji threw an exception. The fix: the UTF-8-safe encoder above.</li>
+    </ul>
+
+    
+    <h2>Performance considerations</h2>
+    <p>When working with these formats at scale, a few performance notes matter. JSON.parse() and JSON.stringify() are highly optimized in modern engines — they're often faster than manual parsing. But they're still synchronous and block the main thread. For very large payloads (10 MB+), consider streaming parsers or Web Workers. Base64 encoding in the browser via <code>btoa()</code> is also synchronous; the UTF-8-safe version above adds overhead. For large binary blobs, the FileReader API with <code>readAsDataURL()</code> can be more efficient since it offloads to the browser's native implementation.</p>
+
+    <h2>Security implications summary</h2>
+    <p>To recap the security surface: JSON injection attacks happen when untrusted data is concatenated into JSON strings without proper escaping — always use a serializer. Base64 provides zero confidentiality; treat encoded data as plaintext. URL encoding prevents injection into query strings but doesn't protect against XSS in HTML contexts — use contextual escaping for that. Each format solves one problem; layering them doesn't compose security.</p>
 
     <div class="article-footer">
       <a href="/blog/">← All articles</a>

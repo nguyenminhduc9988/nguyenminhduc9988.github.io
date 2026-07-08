@@ -50,6 +50,8 @@ article pre code{background:none;border:none;padding:0;color:#c8c8d8;font-size:.
 .post-tag{background:rgba(99,102,241,.12);color:var(--purple);padding:3px 10px;border-radius:100px;font-size:.72rem;font-weight:600}
 .article-footer{margin-top:48px;padding-top:28px;border-top:1px solid var(--border);display:flex;gap:18px;flex-wrap:wrap;align-items:center}
 .article-footer a{color:var(--purple);font-weight:600;font-size:.9rem}
+.callout{background:var(--bg-card);border-left:3px solid var(--purple);border-radius:0 var(--radius) var(--radius) 0;padding:14px 18px;margin:20px 0;font-size:.9rem;color:var(--text-muted)}
+.callout strong{color:var(--text)}
 </style>
 </head>
 <body>
@@ -69,7 +71,7 @@ article pre code{background:none;border:none;padding:0;color:#c8c8d8;font-size:.
   <a href="/blog/" class="back-link">← Back to Blog</a>
   <article>
     <h1>A Developer's Guide to Building Zero-Dependency Python Libraries</h1>
-    <div class="post-meta"><span class="post-tag">Python</span><span>July 7, 2026 · By Duc Nguyen · 7 min read</span></div>
+    <div class="post-meta"><span class="post-tag">Python</span><span>July 7, 2026 · By Duc Nguyen · 14 min read</span></div>
 
     <p>The Python ecosystem has a culture of composability — pull in the package you need, let the package manager resolve its dependencies, and ship. It's productive, and most of the time it's the right call. But there's a category of library where adding even one dependency is the wrong trade, and that category is larger than most developers assume. I maintain several open-source Python libraries that are strictly zero-dependency — they import nothing outside the standard library — and the benefits have been substantial enough that I now default to this approach for anything general-purpose. Here's why it matters, and the concrete patterns that make it practical.</p>
 
@@ -97,6 +99,9 @@ article pre code{background:none;border:none;padding:0;color:#c8c8d8;font-size:.
       <li><strong>Path handling:</strong> <code>pathlib</code> gives clean object-oriented paths and has largely eliminated the need for a paths library.</li>
       <li><strong>Data classes:</strong> <code>dataclasses</code> removes most of the boilerplate that templating libraries used to solve.</li>
       <li><strong>Type validation:</strong> a combination of <code>dataclasses</code>, type hints, and a few lines of validation logic handles the cases people reach for <code>pydantic</code> to solve — not all of them, but more than you'd guess.</li>
+      <li><strong>Date/time:</strong> <code>datetime</code> plus <code>zoneinfo</code> (Python 3.9+) handles timezones without <code>pytz</code> or <code>dateutil</code>.</li>
+      <li><strong>CLI argument parsing:</strong> <code>argparse</code> is powerful enough for most tools.</li>
+      <li><strong>TOML config:</strong> <code>tomllib</code> (Python 3.11+) or <code>configparser</code> for INI.</li>
     </ul>
 
     <h2>Concrete patterns</h2>
@@ -125,13 +130,35 @@ def load_config(path: str | Path) -> AppConfig:
     <h3>Validation without a schema library</h3>
     <p>For lightweight validation, a small helper using type hints and explicit checks is often enough:</p>
     <pre><code>def validate_positive(value, name="value"):
-    if not isinstance(value, (int, float)) or value &lt;= 0:
+    if not isinstance(value, (int, float)) or value <= 0:
         raise ValueError(f"{name} must be a positive number, got {value!r}")
     return value</code></pre>
     <p>This won't replace a full schema validator for complex nested structures, and I'm honest about that — for those cases a dependency may be justified. But for the long tail of "is this a positive integer, is this a non-empty string, is this a valid URL," inline checks keep the library dependency-free and the intent obvious at the call site.</p>
 
     <h3>Estimating costs without a financial library</h3>
     <p>One of my libraries estimates LLM API costs. The math is just token counts multiplied by per-token prices. There's no reason that needs a dependency — it's arithmetic. Keeping it stdlib-only means a user can install it in any environment without worrying about conflicts, and audit the pricing logic in a single read.</p>
+
+    <h3>HTTP without requests</h3>
+    <p>For simple GET/POST, <code>urllib.request</code> is perfectly adequate:</p>
+    <pre><code>import urllib.request
+import json
+
+def fetch_json(url: str, timeout: int = 30) -> dict:
+    req = urllib.request.Request(url, headers={"User-Agent": "my-lib/1.0"})
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        return json.loads(resp.read().decode())
+
+def post_json(url: str, data: dict, timeout: int = 30) -> dict:
+    payload = json.dumps(data).encode()
+    req = urllib.request.Request(
+        url,
+        data=payload,
+        headers={"Content-Type": "application/json", "User-Agent": "my-lib/1.0"},
+        method="POST"
+    )
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        return json.loads(resp.read().decode())</code></pre>
+    <p>This covers 80% of what people use <code>requests</code> for. For streaming, retries, or complex auth, a dependency is justified — but start without.</p>
 
     <h2>When a dependency is the right call</h2>
     <p>I don't want to overstate the case. There are domains where pulling in a well-maintained package is unambiguously correct: a real ORM over hand-rolled SQL, a battle-tested cryptography library when the standard library's primitives don't cover your needs, a parser generator for a complex grammar. The discipline isn't "never use dependencies" — it's "default to none, and justify each one you add." When I do add a dependency, I document why in the README, so the choice is visible and reversible rather than accidental.</p>
@@ -144,8 +171,10 @@ def load_config(path: str | Path) -> AppConfig:
 
     <h2>Try it on your next library</h2>
     <p>If you're starting a new Python library, try a simple experiment: commit to zero third-party dependencies for the first version. Each time you're about to add one, write down what problem it solves and whether the standard library can solve it in ten or twenty lines. You'll likely find, as I did, that the vast majority of "necessary" dependencies dissolve on contact with that question — and what remains is a library that's faster to install, easier to audit, and far less likely to break someone's environment six months from now.</p>
-        <p>The best dependency is the one your users never have to install.</p>
-    <p>The pattern scales beyond individual libraries. Several influential Python projects have adopted zero-dependency or minimal-dependency philosophies for their core modules. The standard library itself is the ultimate example: modules like <code>pathlib</code>, <code>dataclasses</code>, and <code>tomllib</code> were originally third-party packages that proved their value and were promoted into the stdlib precisely because the core developers recognized that a built-in solution removes a dependency burden from the entire ecosystem. By building your own libraries with the same discipline, you are participating in the same virtuous cycle — proving that the standard library can handle the task, and making your users lives simpler one less dependency at a time.</p>
+    <p>The best dependency is the one your users never have to install.</p>
+
+    <h2>Migration path for existing libraries</h2>
+    <p>If you already have a dependency-heavy library, you don't need to rewrite it all at once. Start by identifying the "leaf" dependencies — those that nothing else in your codebase depends on — and replace them one at a time. Run your test suite after each replacement. The goal isn't purity; it's reducing the surface area of things that can break your users.</p>
 
     <div class="article-footer">
       <a href="/blog/">← All articles</a>
