@@ -144,7 +144,8 @@ def load_config(path: str | Path) -> AppConfig:
 
     <h2>Try it on your next library</h2>
     <p>If you're starting a new Python library, try a simple experiment: commit to zero third-party dependencies for the first version. Each time you're about to add one, write down what problem it solves and whether the standard library can solve it in ten or twenty lines. You'll likely find, as I did, that the vast majority of "necessary" dependencies dissolve on contact with that question — and what remains is a library that's faster to install, easier to audit, and far less likely to break someone's environment six months from now.</p>
-    <p>The best dependency is the one your users never have to install.</p>
+        <p>The best dependency is the one your users never have to install.</p>
+    <p>The pattern scales beyond individual libraries. Several influential Python projects have adopted zero-dependency or minimal-dependency philosophies for their core modules. The standard library itself is the ultimate example: modules like <code>pathlib</code>, <code>dataclasses</code>, and <code>tomllib</code> were originally third-party packages that proved their value and were promoted into the stdlib precisely because the core developers recognized that a built-in solution removes a dependency burden from the entire ecosystem. By building your own libraries with the same discipline, you are participating in the same virtuous cycle — proving that the standard library can handle the task, and making your users lives simpler one less dependency at a time.</p>
 
     <div class="article-footer">
       <a href="/blog/">← All articles</a>

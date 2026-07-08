@@ -50,6 +50,8 @@ article pre code{background:none;border:none;padding:0;color:#c8c8d8;font-size:.
 .post-tag{background:rgba(99,102,241,.12);color:var(--purple);padding:3px 10px;border-radius:100px;font-size:.72rem;font-weight:600}
 .article-footer{margin-top:48px;padding-top:28px;border-top:1px solid var(--border);display:flex;gap:18px;flex-wrap:wrap;align-items:center}
 .article-footer a{color:var(--purple);font-weight:600;font-size:.9rem}
+.callout{background:var(--bg-card);border-left:3px solid var(--purple);border-radius:0 var(--radius) var(--radius) 0;padding:14px 18px;margin:20px 0;font-size:.9rem;color:var(--text-muted)}
+.callout strong{color:var(--text)}
 </style>
 </head>
 <body>
@@ -69,7 +71,7 @@ article pre code{background:none;border:none;padding:0;color:#c8c8d8;font-size:.
   <a href="/blog/" class="back-link">← Back to Blog</a>
   <article>
     <h1>How to Audit Your Browser Tools for Privacy and Security</h1>
-    <div class="post-meta"><span class="post-tag">Security</span><span>July 7, 2026 · By Duc Nguyen · 6 min read</span></div>
+    <div class="post-meta"><span class="post-tag">Security</span><span>July 7, 2026 · By Duc Nguyen · 12 min read</span></div>
 
     <p>Every day, developers paste sensitive data into online tools without a second thought — a production API response into a formatter, a private key into a converter, a customer export into a validator. Most of the time nothing bad happens. Sometimes it does, and the cost of that "sometimes" is high enough that it's worth knowing how to vet a tool before you trust it. The good news is that auditing a web tool takes about two minutes, requires no special expertise, and works on any tool on the internet. Here's the checklist I use.</p>
 
@@ -99,10 +101,10 @@ article pre code{background:none;border:none;padding:0;color:#c8c8d8;font-size:.
     <p>Network behavior is the most decisive signal, but it's not the only one. A few other indicators that a tool deserves extra scrutiny:</p>
 
     <h3>Heavy tracking scripts</h3>
-    <p>Even if a tool is client-side, the page itself can be loaded with trackers — analytics, advertising pixels, fingerprinting scripts. None of these see the contents of your computation, but they do build a profile of your visit. If a simple utility page is running twenty tracking scripts, the operator's priorities are telling you something.</p>
+    <p>Even if a tool is client-side, the page itself can be loaded with trackers — analytics, advertising pixels, fingerprinting scripts. None of these see the contents of your computation, but they do build a profile of your visit. If a simple utility page is running twenty tracking scripts, the operator's priorities are telling you something. I've seen JSON formatters that load Google Analytics, Facebook Pixel, Hotjar, and three ad networks before the formatter even renders.</p>
 
     <h3>No source code and no explanation</h3>
-    <p>A trustworthy tool usually explains how it works, and ideally lets you read the code. A page that demands you trust it on faith, with no technical detail and no link to its source, gives you no way to verify its claims. The strongest tools publish their code — even minified, the fact that it's there to inspect matters.</p>
+    <p>A trustworthy tool usually explains how it works, and ideally lets you read the code. A page that demands you trust it on faith, with no technical detail and no link to its source, gives you no way to verify its claims. The strongest tools publish their code — even minified, the fact that it's there to inspect matters. My own tools at <a href="/">Duc Nguyen</a> are all client-side and you can verify them in the Network tab yourself.</p>
 
     <h3>Requests to unexpected domains on input</h3>
     <p>The cleanest tools load everything they need once and then sit quiet. If pasting input triggers a flurry of requests to domains you don't recognize, treat that as suspicious. A client-side tool should not need to phone home when you type.</p>
@@ -127,6 +129,17 @@ article pre code{background:none;border:none;padding:0;color:#c8c8d8;font-size:.
 
     <h2>A quick pre-flight routine</h2>
     <p>If you handle sensitive data regularly, make this a habit before pasting into any unfamiliar tool: open DevTools, watch the Network tab, paste a test marker. Two minutes, every time. Once you've done it a few times it becomes automatic, and you'll develop a shortlist of tools you've already vetted and trust. The ones that don't pass, you'll simply stop using — and that's a quiet, significant improvement to your security posture that costs you almost nothing.</p>
+    <p>Build this habit into your workflow explicitly. When you start a new week, check which online tools you used the previous week and run the fifteen-second test on any you haven't vetted yet. Over a month, you'll have audited every utility you rely on, and you'll have a clear mental model of which ones deserve your trust and which ones are fine only for throwaway data. The cost is a few minutes per tool, amortized across every future use. Most developers I've shared this with report that after the first month of auditing tools as they encounter them, the habit runs on autopilot — they open DevTools alongside a new tool the way they naturally reach for ad-blockers and password managers. It becomes part of a baseline security posture that operates without conscious effort, and that's precisely where you want it.</p>
+    <p>And if you're building tools yourself — even small internal ones — consider making them verifiably client-side from the start. The architecture choice costs nothing upfront (static files are cheaper to host than a server anyway), and it turns a privacy promise from a marketing claim into something your users can confirm with DevTools in fifteen seconds. That's the kind of trust you can't buy, and it's the only kind that matters for tools that handle sensitive input. When every user can independently verify that their data stays on their device, you've eliminated the need for privacy theater entirely, and you've built a relationship with your audience that's grounded in verifiable fact, not aspirational promises.</p>
+
+    <h2>Common mistakes developers make when auditing</h2>
+    <p>Even with the Network tab open, it's easy to misread what you're seeing. Here are the pitfalls I've watched smart developers fall into:</p>
+    <ul>
+      <li><strong>Confusing asset loads with data exfiltration.</strong> A request for <code>vendor.js</code> or a font file is normal. Look at the <em>payload</em>, not just the URL.</li>
+      <li><strong>Not waiting long enough.</strong> Some tools batch data and send it on a timer. Watch for 10–15 seconds after your action.</li>
+      <li><strong>Missing WebSocket connections.</strong> The Network tab has a "WS" filter — check it. Persistent WebSocket connections can stream data continuously.</li>
+      <li><strong>Ignoring third-party iframes.</strong> An embedded widget (chat, payment, recaptcha) lives in its own frame with its own Network tab. Click into the frame to inspect.</li>
+    </ul>
 
     <div class="article-footer">
       <a href="/blog/">← All articles</a>

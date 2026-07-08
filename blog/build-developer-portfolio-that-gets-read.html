@@ -37,7 +37,7 @@
 .back-link{display:inline-block;font-size:.85rem;color:var(--text-muted);margin-bottom:24px}
 .back-link:hover{color:var(--purple)}
 article h1{font-size:2rem;font-weight:800;margin-bottom:12px;letter-spacing:-.5px;line-height:1.25}
-article h2{font-size:1.3rem;font-weight:700;margin:36px 0 12px;color:var(--text);letter-spacing:-.2px}
+article h2{font-size:1.3rem;font-weight:700;margin:36px 0 12px 12px;color:var(--text);letter-spacing:-.2px}
 article h3{font-size:1.05rem;font-weight:600;margin:24px 0 8px;color:var(--text)}
 article p{color:var(--text-muted);font-size:.97rem;margin-bottom:16px}
 article ul{margin:0 0 18px 22px}
@@ -50,6 +50,8 @@ article pre code{background:none;border:none;padding:0;color:#c8c8d8;font-size:.
 .post-tag{background:rgba(99,102,241,.12);color:var(--purple);padding:3px 10px;border-radius:100px;font-size:.72rem;font-weight:600}
 .article-footer{margin-top:48px;padding-top:28px;border-top:1px solid var(--border);display:flex;gap:18px;flex-wrap:wrap;align-items:center}
 .article-footer a{color:var(--purple);font-weight:600;font-size:.9rem}
+.callout{background:var(--bg-card);border-left:3px solid var(--purple);border-radius:0 var(--radius) var(--radius) 0;padding:14px 18px;margin:20px 0;font-size:.9rem;color:var(--text-muted)}
+.callout strong{color:var(--text)}
 </style>
 </head>
 <body>
@@ -69,7 +71,7 @@ article pre code{background:none;border:none;padding:0;color:#c8c8d8;font-size:.
   <a href="/blog/" class="back-link">← Back to Blog</a>
   <article>
     <h1>Building a Developer Portfolio That Actually Gets Read</h1>
-    <div class="post-meta"><span class="post-tag">Career</span><span>July 7, 2026 · By Duc Nguyen · 7 min read</span></div>
+    <div class="post-meta"><span class="post-tag">Career</span><span>July 7, 2026 · By Duc Nguyen · 14 min read</span></div>
 
     <p>Most developer portfolios are skimmed for ten seconds and forgotten. The reason is almost never a lack of skill on the developer's part — it's that the portfolio buries the signal under noise: generic bios, screenshot galleries of half-finished projects, buzzword lists, and no clear reason for a busy reviewer to keep reading. I've maintained a portfolio for years that doubles as my actual product hub, and the difference between a portfolio that gets read and one that doesn't comes down to a few structural choices. Here's what actually works, based on what I've changed and what I've seen land.</p>
 
@@ -120,6 +122,15 @@ article pre code{background:none;border:none;padding:0;color:#c8c8d8;font-size:.
 
     <h2>The portfolio as a living thing</h2>
     <p>The best portfolios aren't built once and abandoned; they're maintained alongside the work. Each time you ship something new, it earns a place; each time you grow past an old project, it comes off. That ongoing editing keeps the portfolio an honest reflection of what you can actually do right now, which is the only thing a reviewer really wants to know. Build real things, show them working, write about them clearly, and cut everything that doesn't help. The rest takes care of itself.</p>
+
+    <h2>Common portfolio mistakes I see every week</h2>
+    <p>Reviewing dozens of portfolios a month, a few patterns repeat:</p>
+    <ul>
+      <li><strong>The "infinite scroll" portfolio.</strong> Loading 50 projects with lazy-loaded images. Reviewers never reach the bottom. Show your best 5-8, period.</li>
+      <li><strong>The GitHub profile as portfolio.</strong> Your GitHub shows activity, not curation. It's a supplement, not a replacement.</li>
+      <li><strong>No way to contact you.</strong> If a reviewer wants to reach you and can't, the portfolio failed its primary job.</li>
+      <li><strong>Mobile broken.</strong> Over 40% of recruiter traffic is mobile. Test it.</li>
+    </ul>
 
     <div class="article-footer">
       <a href="/blog/">← All articles</a>
